@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')
-@section('meta_description', 'Looking for the best interior design company in Bangladesh? Triangle Interior Design has delivered 500+ stunning homes in Dhaka & Chittagong. Call +8801810536303 for free consultation!')
-@section('meta_keywords', 'best interior design company in bangladesh, interior design dhaka, luxury home interior, modular kitchen bangladesh, duplex interior design dhaka, triangle interior design')
+@section('title', 'Interior Design Website – Best Interior Design Company in Bangladesh | Triangle Interior Design')
+@section('meta_description', 'Looking for the best Interior Design Website in Bangladesh? Triangle Interior Design offers luxury turnkey home and commercial interiors with factory-backed precision. Call +8801810536303 for free consultation!')
+@section('meta_keywords', 'Interior Design Website, best interior design website, modern interior design website, luxury interior design website, interior design website bangladesh, interior design company dhaka, best interior designer, modular kitchen bangladesh, duplex interior design dhaka, triangle interior design')
 
 @push('scripts')
 <script type="application/ld+json">
@@ -66,13 +66,13 @@
                 <div class="dit-hero__bg" role="img" aria-label="{{ $slide->title ?? 'Interior Slide' }}" style="background-image:url('{{ asset($slide->image) }}');"></div>
                 <div class="dit-hero__inner">
                     <div class="dit-hero__contents">
-                        <h2 class="dit-hero__heading">
+                        <h1 class="dit-hero__heading">
                             @if(!empty($slide->highlight_word) && str_contains($slide->title, $slide->highlight_word))
                                 {!! str_replace($slide->highlight_word, '<span class="highlight">' . e($slide->highlight_word) . '</span>', e($slide->title)) !!}
                             @else
                                 {{ $slide->title }}
                             @endif
-                        </h2>
+                        </h1>
                         @if(!empty($slide->subtitle))
                             <p class="dit-hero__desc">
                                 {{ $slide->subtitle }}
@@ -86,9 +86,9 @@
                 <div class="dit-hero__bg" role="img" aria-label="Luxury Interior" style="background-image:url('{{ asset('images/banner-1.webp') }}');"></div>
                 <div class="dit-hero__inner">
                     <div class="dit-hero__contents">
-                        <h2 class="dit-hero__heading">
+                        <h1 class="dit-hero__heading">
                             We Believe<br><span class="highlight">Quality</span> Produces <span class="highlight">Luxury</span>
-                        </h2>
+                        </h1>
                         <p class="dit-hero__desc">
                             At Triangle Interior Design, Quality Produces Luxury. It begins with thoughtful proportions, well-chosen materials, and precise finishes.
                         </p>

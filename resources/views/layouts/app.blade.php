@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')</title>
-    <meta name="description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? Triangle Interior Design has delivered 500+ stunning homes in Dhaka & Chittagong. Call +8801810536303 for free consultation!')">
-    <meta name="keywords" content="@yield('meta_keywords', 'interior design bangladesh, interior design company dhaka, best interior designer, luxury home interior, modular kitchen design dhaka, duplex interior design, turnkey interior firm')">
+    <title>@yield('title', 'Interior Design Website – Best Interior Design Company in Bangladesh | Triangle Interior Design')</title>
+    <meta name="description" content="@yield('meta_description', 'Triangle Interior Design is the top-rated Interior Design Website and fit-out firm in Bangladesh. Discover award-winning residential & commercial interior architecture, luxury living, and custom factory joinery. Call +8801810536303.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Interior Design Website, best interior design website, luxury interior design website, modern interior design website, interior design website bangladesh, interior design company dhaka, best interior designer, luxury home interior, modular kitchen design dhaka, duplex interior design, turnkey interior firm, apartment interior design, office interior design bangladesh')">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Triangle Interior Design">
     <link rel="canonical" href="{{ url()->current() }}">
@@ -28,8 +28,8 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Triangle Interior Design">
     <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta property="og:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')">
-    <meta property="og:description" content="@yield('meta_description', 'Triangle Interior Design - Leading Interior Design firm with 500+ projects completed.')">
+    <meta property="og:title" content="@yield('title', 'Interior Design Website – Best Interior Design Company in Bangladesh | Triangle Interior Design')">
+    <meta property="og:description" content="@yield('meta_description', 'Triangle Interior Design - Leading Interior Design Website with 500+ projects completed.')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="@yield('og_image', asset('images/banner-4.webp'))">
     <meta property="og:image:width" content="1200">
@@ -37,8 +37,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? 500+ homes delivered.')">
+    <meta name="twitter:title" content="@yield('title', 'Interior Design Website – Best Interior Design Company in Bangladesh | Triangle Interior Design')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Looking for the best Interior Design Website in Bangladesh? 500+ homes delivered.')">
     <meta name="twitter:image" content="@yield('og_image', asset('images/banner-4.webp'))">
 
     <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
@@ -49,7 +49,8 @@
         {
           "@@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
           "@@id": "{{ url('/') }}/#organization",
-          "name": "Triangle Interior Design",
+          "name": "Triangle Interior Design - Interior Design Website",
+          "description": "Premier Interior Design Website in Bangladesh for turnkey residential and commercial architecture, joinery, and interior design.",
           "url": "{{ url('/') }}",
           "logo": "{{ asset('images/triangle-logo.svg') }}",
           "image": "{{ asset('images/banner-4.webp') }}",
@@ -94,7 +95,8 @@
           "@@type": "WebSite",
           "@@id": "{{ url('/') }}/#website",
           "url": "{{ url('/') }}",
-          "name": "Triangle Interior Design",
+          "name": "Triangle Interior Design – Interior Design Website",
+          "description": "Leading Interior Design Website in Bangladesh showcasing turnkey residential, commercial, and modular furniture architecture.",
           "potentialAction": {
             "@@type": "SearchAction",
             "target": {

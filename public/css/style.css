@@ -577,9 +577,9 @@ ul {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    padding: 65px 50px 50px;
+    padding: 20px 50px 100px;
     color: #ffffff;
     text-align: left;
     background: linear-gradient(to right, rgba(0, 0, 0, var(--dit-overlay-strength, 0.75)) 15%, rgba(0, 0, 0, 0.2) 80%);
@@ -627,27 +627,28 @@ ul {
     font-weight: 800;
 }
 
-/* OVERLAY 1 — "Get Free Consultation" button */
+/* OVERLAY 1 — "Get Free Consultation" button (smaller, sleek) */
 .dit-hero .dit-hero__cta {
     position: absolute;
-    top: 380px;
+    bottom: 80px;
     left: 50px;
-    margin-top: 50px;
+    top: auto;
+    margin-top: 0;
     z-index: 5;
     display: inline-block;
     background-color: #eb2449;
     color: #ffffff;
     font-family: var(--font-heading);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
     text-decoration: none;
     border: 1px solid transparent;
-    border-radius: 8px;
-    padding: 20px 28px;
+    border-radius: 6px;
+    padding: 12px 22px;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(235, 36, 73, 0.4);
+    box-shadow: 0 4px 14px rgba(235, 36, 73, 0.35);
     transition: background-color .3s, transform .2s;
 }
 
@@ -657,18 +658,19 @@ ul {
     transform: translateY(-2px);
 }
 
-/* OVERLAY 2 — Catalogue download (pill box + image) */
+/* OVERLAY 2 — Catalogue download (pill box + image, scaled down) */
 .dit-hero .dit-hero__catalogue {
     position: absolute;
-    top: 380px;
-    left: 310px;
-    margin-top: 50px;
+    bottom: 80px;
+    left: 285px;
+    top: auto;
+    margin-top: 0;
     z-index: 5;
     display: inline-flex;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 8px;
-    padding: 8px 14px;
+    border-radius: 6px;
+    padding: 6px 12px;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform .2s;
@@ -680,7 +682,7 @@ ul {
 
 .dit-hero .dit-hero__catalogue img {
     display: block;
-    width: 140px;
+    width: 95px;
     height: auto;
 }
 
@@ -737,65 +739,72 @@ ul {
 /* TABLET RESPONSIVENESS */
 @media (max-width: 1024px) {
     .dit-hero .dit-hero__viewport { height: 350px; }
-    .dit-hero .dit-hero__inner    { padding: 25px 20px 20px; }
+    .dit-hero .dit-hero__inner    { align-items: center; padding: 20px 20px 65px; }
     .dit-hero .dit-hero__contents { max-width: 700px; }
-    .dit-hero .dit-hero__heading  { font-size: 34px; line-height: 1.25; }
+    .dit-hero .dit-hero__heading  { font-size: 32px; line-height: 1.25; }
     .dit-hero .dit-hero__desc     { display: none; } /* Hidden on tablet/mobile like reference */
 
     .dit-hero .dit-hero__cta {
-        top: 140px;
+        top: auto;
+        bottom: 50px;
         left: 20px;
-        margin-top: 40px;
-        font-size: 14px;
-        padding: 16px 20px;
+        margin-top: 0;
+        font-size: 11px;
+        padding: 8px 15px;
+        border-radius: 5px;
     }
 
     .dit-hero .dit-hero__catalogue {
-        top: 140px;
-        left: 215px;
-        margin-top: 40px;
+        top: auto;
+        bottom: 50px;
+        left: 195px;
+        margin-top: 0;
+        padding: 4px 8px;
+        border-radius: 5px;
     }
-    .dit-hero .dit-hero__catalogue img { width: 120px; }
+    .dit-hero .dit-hero__catalogue img { width: 85px; }
 
-    .dit-hero .dit-hero__social { padding: 15px 20px; }
+    .dit-hero .dit-hero__social { padding: 12px 20px; }
     .dit-hero .dit-hero__social-list { gap: 10px; }
 }
 
-/* MOBILE RESPONSIVENESS (Matches user's mobile screenshot exactly!) */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 767px) {
     .dit-hero .dit-hero__viewport { height: 260px; }
-    .dit-hero .dit-hero__inner    { padding: 16px 16px 14px; }
+    .dit-hero .dit-hero__inner    { align-items: center; padding: 12px 16px 50px; }
     .dit-hero .dit-hero__contents { max-width: 340px; }
     .dit-hero .dit-hero__heading  { font-size: 20px; line-height: 1.28; margin-bottom: 0; }
     .dit-hero .dit-hero__desc     { display: none; }
 
     .dit-hero .dit-hero__cta {
-        top: 80px;
+        top: auto;
+        bottom: 35px;
         left: 16px;
-        margin-top: 36px;
-        font-size: 10.5px;
-        border-radius: 6px;
-        padding: 9px 12px;
-        letter-spacing: 0.05em;
+        margin-top: 0;
+        font-size: 9.5px;
+        border-radius: 4px;
+        padding: 6px 10px;
+        letter-spacing: 0.04em;
     }
 
     .dit-hero .dit-hero__catalogue {
-        top: 80px;
-        left: 16px;
+        top: auto;
+        bottom: 35px;
+        left: 155px;
         margin-top: 0;
-        padding: 2px 4px;
-        border-radius: 6px;
+        padding: 2px 5px;
+        border-radius: 4px;
     }
     .dit-hero .dit-hero__catalogue img {
-        width: 82px;
-        height: 24px;
+        width: 68px;
+        height: 18px;
         object-fit: contain;
     }
 
     .dit-hero .dit-hero__social { padding: 8px 16px; }
     .dit-hero .dit-hero__social-list { gap: 6px; }
-    .dit-hero .dit-hero__social-icon { width: 26px; height: 26px; padding: 0; }
-    .dit-hero .dit-hero__social-icon svg { width: 13px; height: 13px; }
+    .dit-hero .dit-hero__social-icon { width: 24px; height: 24px; padding: 0; }
+    .dit-hero .dit-hero__social-icon svg { width: 12px; height: 12px; }
 }
 
 /* ==========================================================================
