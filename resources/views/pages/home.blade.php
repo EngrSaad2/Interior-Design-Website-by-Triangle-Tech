@@ -78,6 +78,15 @@
                                 {{ $slide->subtitle }}
                             </p>
                         @endif
+                        <div class="dit-hero__actions">
+                            <button type="button" class="dit-hero__cta open-consultation-modal">
+                                {{ !empty($slide->button_text) ? $slide->button_text : 'Get Free Consultation' }}
+                            </button>
+                            <a class="dit-hero__catalogue open-consultation-modal" href="{{ !empty($slide->catalogue_url) ? $slide->catalogue_url : '#consultation' }}" title="Portfolio Download Now">
+                                <img alt="Download Portfolio E-Catalogue" src="{{ asset('images/btn-down.webp') }}" onerror="this.style.display='none'">
+                                <span class="catalogue-fallback-text"><i class="fas fa-download"></i> Portfolio Download Now</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,25 +101,22 @@
                         <p class="dit-hero__desc">
                             At Triangle Interior Design, Quality Produces Luxury. It begins with thoughtful proportions, well-chosen materials, and precise finishes.
                         </p>
+                        <div class="dit-hero__actions">
+                            <button type="button" class="dit-hero__cta open-consultation-modal">
+                                Get Free Consultation
+                            </button>
+                            <a class="dit-hero__catalogue open-consultation-modal" href="#consultation" title="Portfolio Download Now">
+                                <img alt="Download Portfolio E-Catalogue" src="{{ asset('images/btn-down.webp') }}" onerror="this.style.display='none'">
+                                <span class="catalogue-fallback-text"><i class="fas fa-download"></i> Portfolio Download Now</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         @endforelse
     </div>
 
-    <!-- Hero Overlaid Actions (Matches ditstudio layout) -->
-    <!-- Action 1: Get Free Consultation (Red Button) -->
-    <button type="button" class="dit-hero__cta open-consultation-modal" id="heroCtaBtn">
-        Get Free Consultation
-    </button>
-
-    <!-- Action 2: Download Portfolio / E-Catalogue Pill Button -->
-    <a class="dit-hero__catalogue open-consultation-modal" href="#consultation" id="heroDownloadBtn" title="Portfolio Download Now">
-        <img alt="Download Portfolio E-Catalogue" src="{{ asset('images/btn-down.webp') }}" onerror="this.style.display='none'">
-        <span class="catalogue-fallback-text"><i class="fas fa-download"></i> Portfolio Download Now</span>
-    </a>
-
-    <!-- Action 3: Hero Social Media Circular Icons (Facebook, LinkedIn, YouTube, Messenger, Pinterest, WhatsApp) -->
+    <!-- Hero Social Media Circular Icons (Facebook, LinkedIn, YouTube, Messenger, Pinterest, WhatsApp) -->
     <div class="dit-hero__social">
         <ul class="dit-hero__social-list">
             <li>

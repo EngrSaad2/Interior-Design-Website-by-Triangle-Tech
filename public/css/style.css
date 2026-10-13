@@ -579,7 +579,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 50px 100px;
+    padding: 20px 50px 30px;
     color: #ffffff;
     text-align: left;
     background: linear-gradient(to right, rgba(0, 0, 0, var(--dit-overlay-strength, 0.75)) 15%, rgba(0, 0, 0, 0.2) 80%);
@@ -627,15 +627,21 @@ ul {
     font-weight: 800;
 }
 
-/* OVERLAY 1 — "Get Free Consultation" button (smaller, sleek) */
-.dit-hero .dit-hero__cta {
-    position: absolute;
-    bottom: 80px;
-    left: 50px;
-    top: auto;
-    margin-top: 0;
+/* Hero Action Buttons - Positioned right inside marked area under subtitle */
+.dit-hero .dit-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 26px;
+    position: relative;
     z-index: 5;
-    display: inline-block;
+}
+
+.dit-hero .dit-hero__cta {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #eb2449;
     color: #ffffff;
     font-family: var(--font-heading);
@@ -658,16 +664,11 @@ ul {
     transform: translateY(-2px);
 }
 
-/* OVERLAY 2 — Catalogue download (pill box + image, scaled down) */
 .dit-hero .dit-hero__catalogue {
-    position: absolute;
-    bottom: 80px;
-    left: 285px;
-    top: auto;
-    margin-top: 0;
-    z-index: 5;
+    position: static;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     background-color: #ffffff;
     border-radius: 6px;
     padding: 6px 12px;
@@ -743,22 +744,15 @@ ul {
     .dit-hero .dit-hero__contents { max-width: 700px; }
     .dit-hero .dit-hero__heading  { font-size: 32px; line-height: 1.25; }
     .dit-hero .dit-hero__desc     { display: none; } /* Hidden on tablet/mobile like reference */
+    .dit-hero .dit-hero__actions  { margin-top: 18px; gap: 12px; }
 
     .dit-hero .dit-hero__cta {
-        top: auto;
-        bottom: 50px;
-        left: 20px;
-        margin-top: 0;
         font-size: 11px;
         padding: 8px 15px;
         border-radius: 5px;
     }
 
     .dit-hero .dit-hero__catalogue {
-        top: auto;
-        bottom: 50px;
-        left: 195px;
-        margin-top: 0;
         padding: 4px 8px;
         border-radius: 5px;
     }
@@ -771,16 +765,13 @@ ul {
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 767px) {
     .dit-hero .dit-hero__viewport { height: 260px; }
-    .dit-hero .dit-hero__inner    { align-items: center; padding: 12px 16px 50px; }
+    .dit-hero .dit-hero__inner    { align-items: center; padding: 12px 16px; }
     .dit-hero .dit-hero__contents { max-width: 340px; }
     .dit-hero .dit-hero__heading  { font-size: 20px; line-height: 1.28; margin-bottom: 0; }
     .dit-hero .dit-hero__desc     { display: none; }
+    .dit-hero .dit-hero__actions  { margin-top: 14px; gap: 10px; }
 
     .dit-hero .dit-hero__cta {
-        top: auto;
-        bottom: 35px;
-        left: 16px;
-        margin-top: 0;
         font-size: 9.5px;
         border-radius: 4px;
         padding: 6px 10px;
@@ -788,10 +779,6 @@ ul {
     }
 
     .dit-hero .dit-hero__catalogue {
-        top: auto;
-        bottom: 35px;
-        left: 155px;
-        margin-top: 0;
         padding: 2px 5px;
         border-radius: 4px;
     }

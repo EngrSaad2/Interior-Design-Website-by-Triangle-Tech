@@ -1,59 +1,197 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Triangle Interior Design - Interior Design Website & CMS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack, enterprise-grade Interior Design Website and dynamic Content Management System (CMS) built with Laravel, MySQL, Vanilla CSS, and modern JavaScript. The platform replicates the luxury aesthetics and high-performance user experience of DitStudio while delivering a complete backend management suite adapted from proven architectural patterns.
 
-## About Laravel
+Primary SEO Target Keyword: **Interior Design Website**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Key Highlights
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Dynamic Hero Slider**: High-resolution luxury presentation slider with smooth animations, custom headings, highlight spans, subtitles, and direct action triggers.
+- **Custom Admin CMS**: Complete administrative control panel for slides, services, projects, furniture products, blogs, FAQs, testimonials, leads, inquiries, and site configuration.
+- **Full Database Backup Included**: Pre-populated database with 30 production-grade projects, category taxonomies, factory joinery specifications, and real asset references stored in `DB/interior.sql`.
+- **Comprehensive SEO Architecture**: Built-in Schema.org JSON-LD structured data (HomeAndConstructionBusiness, ProfessionalService, WebSite, FAQPage), OpenGraph tags, Twitter Card metadata, geographic local SEO tags, and targeted keyword hierarchy.
+- **Responsive Engineering**: Tailored layouts across ultra-wide desktop, laptop, tablet, and mobile viewports.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Core Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Frontend Experience
 
-## Laravel Sponsors
+- **Hero Slider**:
+  - Auto-playing carousel with pause on hover and keyboard navigation.
+  - Aligned action buttons (Get Free Consultation and Portfolio Download) integrated into the slide content flow.
+  - Social media integration (Facebook, LinkedIn, YouTube, Messenger, Pinterest, WhatsApp).
+- **Home Interior Services Carousel**:
+  - Horizontal multi-card service slider with interactive arrows and hover depth.
+  - Links to dedicated service landing pages.
+- **Project Portfolio Gallery**:
+  - Live filtering by category (Living Room, Bedroom, Dining, Kitchen, Office, Duplex).
+  - 30 distinct architectural projects with high-resolution imagery and client detail pages.
+- **Furniture & Joinery Showcase**:
+  - Interactive product catalog categorized by type (Sofas, Dining Sets, Consoles, Cabinetry).
+  - Quick-inquiry modal for specific furniture fit-out pricing.
+- **Why Choose Us Section**:
+  - Core value propositions highlighting factory prefabrication, German hardware (Blum, Hafele), and moisture-resistant marine plywood.
+  - High-definition video modal integration.
+- **Editorial Blog Engine**:
+  - Categorized interior architecture design guides and advice articles.
+  - Dedicated article view with sidebar widgets and related reading.
+- **Schema-Powered FAQ Section**:
+  - Accordion interface with instant expansion for pricing, timelines, factory visits, and material specifications.
+  - Synced with Google FAQPage rich snippet schema.
+- **Lead Capture & Consultation**:
+  - Universal consultation modal accessible across all page sections.
+  - Real-time client-side and server-side validation with instant response feedback.
+  - WhatsApp direct connect integration (+8801810536303).
+- **Developer Attribution**:
+  - Footer credits linking to Engr Saad (engr-saad.com).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Administrative CMS Suite
 
-### Premium Partners
+Accessible at `/admin` with protected authentication middleware:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Dashboard**:
+  - Statistical summary metrics: Active Sliders, Total Projects, Products, Services, Blogs, FAQs, and Leads.
+  - Quick action links and recent activity logs.
+- **Slider Management**:
+  - Add, edit, reorder, and toggle hero banner slides.
+  - Dynamic image upload with preview, highlight word styling, custom button labels, and catalog attachments.
+- **Service Management**:
+  - Manage services, slug generators, iconography, and descriptive highlights.
+- **Project Management**:
+  - Create and update portfolio entries with primary cover images and multi-image project galleries.
+  - Client metadata: Project location, area square footage, completion year, and category tagging.
+- **Furniture Catalog Management**:
+  - Manage products, categories, SKU codes, pricing, materials, and stock availability.
+- **Blog & Content Management**:
+  - Rich text article authoring with WYSIWYG integration.
+  - Featured image handling, publication status toggle, and author credits.
+- **Testimonials & Social Proof**:
+  - Manage verified client reviews, star ratings, client avatars, and company designations.
+- **FAQ Management**:
+  - Add, edit, and sort frequently asked questions reflected immediately on the public site and Schema markup.
+- **Inquiry & Lead Management**:
+  - Review incoming customer consultations and quotation requests.
+  - Status progression workflow (New, In Progress, Closed, Archived).
+- **System Administration & Database Backup**:
+  - Secure profile credential and password updates.
+  - One-click MySQL database dump generation and download utility.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Technical Stack
 
-## Code of Conduct
+- **Backend Framework**: Laravel 11.x
+- **Language**: PHP 8.2+
+- **Database**: MySQL 8.0+ / MariaDB (Local database name: `interior`)
+- **Frontend Architecture**: Laravel Blade, Vanilla CSS (Design tokens, BEM structure), Modern JavaScript (ES6+)
+- **Icons**: Font Awesome 6 Free + SVG Inline Vectors
+- **Fonts**: Outfit & Jost (Google Fonts)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Directory Structure
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+interior/
+├── app/
+│   ├── Http/Controllers/       # Public and Admin Controllers
+│   └── Models/                 # Eloquent Models (Slider, Project, Service, Product, etc.)
+├── DB/
+│   └── interior.sql            # Complete database dump with all tables and seed data
+├── public/
+│   ├── css/style.css           # Core stylesheet with responsive design system
+│   ├── js/main.js              # Frontend interactive scripts
+│   └── images/                 # Optimized web assets, logos, and slider banners
+├── resources/
+│   └── views/
+│       ├── layouts/            # Master layout with comprehensive SEO tags
+│       ├── pages/              # Public views (Home, Projects, Services, Contact, etc.)
+│       └── admin/              # Complete administrative CRUD dashboard views
+└── routes/
+    └── web.php                 # Public and authenticated admin routing
+```
+
+---
+
+## Installation & Setup
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/EngrSaad2/Interior-Design-Website-by-Triangle-Tech.git
+cd Interior-Design-Website-by-Triangle-Tech
+```
+
+### 2. Environment Configuration
+Copy the environment template and configure database parameters:
+```bash
+cp .env.example .env
+```
+Ensure database credentials match your local MySQL server:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=interior
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 3. Install Dependencies & Generate Key
+```bash
+composer install
+php artisan key:generate
+```
+
+### 4. Database Import
+Import the provided database dump located in the `DB` directory:
+
+#### Using Command Line:
+```bash
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS interior CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+mysql -u root -p interior < DB/interior.sql
+```
+
+#### Using phpMyAdmin:
+1. Open `http://localhost/phpmyadmin/`.
+2. Create a new database named `interior`.
+3. Select `Import` and choose `DB/interior.sql`.
+4. Click `Go` to execute the import.
+
+### 5. Start Development Server
+```bash
+php artisan serve
+```
+Or access directly via local server:
+`http://localhost/interior/public/`
+
+---
+
+## Default Administrative Credentials
+
+- **Admin Login URL**: `http://localhost/interior/public/admin/login`
+- **Email**: `saad@gmail.com`
+- **Password**: `123456`
+
+---
+
+## Search Engine Optimization (SEO) Specifications
+
+- **Primary Keyword**: Interior Design Website
+- **Secondary Keywords**: Best interior design website, modern interior design website, luxury interior design website, interior design website bangladesh, interior design company dhaka, best interior designer in bangladesh, residential interior design website, commercial interior design, turnkey interior architecture, custom furniture bangladesh
+- **Structured Data**:
+  - HomeAndConstructionBusiness
+  - ProfessionalService
+  - WebSite with SearchAction
+  - FAQPage
+- **Geographic Metatags**: Dhaka, Bangladesh (`BD-13`, Coordinates: `23.777176, 90.399452`)
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.
+Developed by Engr Saad for Triangle Interior Design.
