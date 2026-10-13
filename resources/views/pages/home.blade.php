@@ -311,7 +311,6 @@
 <section class="section-padding bg-light" id="testimonialsSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Real Client Feedback</span>
             <h2 class="services-main-heading">WHAT OUR CUSTOMERS SAY ABOUT US</h2>
         </div>
 
@@ -373,7 +372,6 @@
 <section class="section-padding" style="background:#ffffff;" id="videosSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Walkthroughs & Handover Tours</span>
             <h2 class="services-main-heading">SEE OUR INTERIOR DESIGN PROJECT VIDEOS</h2>
         </div>
 
@@ -413,7 +411,6 @@
 <section class="section-padding bg-light" id="projectsSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Bespoke Living Spaces</span>
             <h2 class="services-main-heading">LATEST HOME INTERIOR DESIGN PROJECTS</h2>
         </div>
 
@@ -544,7 +541,6 @@
 <section class="section-padding" style="background:#111317; color:#ffffff;" id="statsSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle" style="color:var(--color-primary);">Track Record of Distinction</span>
             <h2 class="services-main-heading" style="color:#ffffff;">TRIANGLE INTERIOR DESIGN AT A GLANCE</h2>
         </div>
 
@@ -587,7 +583,6 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-content">
-                <span class="section-subtitle">Since 2011 in Dhaka</span>
                 <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1.25rem; font-family:var(--font-heading); color:var(--color-dark);">
                     About Triangle Interior Design – A Leading Interior Design Company in Dhaka
                 </h2>
@@ -646,7 +641,6 @@
 <section class="section-padding bg-light" id="areasSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Nationwide Turnkey Coverage</span>
             <h2 class="services-main-heading">INTERIOR DESIGN SERVICE AREAS ACROSS BANGLADESH</h2>
             <p style="color:#64748b; max-width:700px; margin:0.75rem auto 0 auto;">
                 Our design architects and mobile installation teams operate in all premier residential neighborhoods in Dhaka and major commercial hubs across Bangladesh.
@@ -696,7 +690,6 @@
 <section class="section-padding" style="background:#ffffff;" id="trustSection">
     <div class="container">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Our Promise to You</span>
             <h2 class="services-main-heading">WHY 500+ HOMEOWNERS TRUST TRIANGLE INTERIOR DESIGN</h2>
         </div>
 
@@ -734,7 +727,6 @@
 <section class="section-padding bg-light" id="faqsSection">
     <div class="container" style="max-width:960px;">
         <div class="section-title-wrap text-center">
-            <span class="section-subtitle">Got Questions?</span>
             <h2 class="services-main-heading">FREQUENTLY ASKED QUESTIONS</h2>
             <p style="color:#64748b;">Direct answers regarding costs, timelines, factory visits, and material specifications.</p>
         </div>
