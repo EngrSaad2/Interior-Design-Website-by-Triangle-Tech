@@ -37,9 +37,12 @@ Route::get('/project-hubs/{slug}', [InteriorController::class, 'projectHub'])->n
 Route::get('/why-choose-dit', [InteriorController::class, 'whyChooseDit'])->name('why.choose');
 Route::get('/about-us', [InteriorController::class, 'aboutUs'])->name('about');
 
-// Shop
+// Shop & Catalogue
 Route::get('/shop', [InteriorController::class, 'shop'])->name('shop');
 Route::get('/shop/{slug}', [InteriorController::class, 'productDetail'])->name('product.detail');
+Route::get('/product/{slug}', [InteriorController::class, 'productDetail']);
+Route::get('/catalogue', [InteriorController::class, 'downloadCatalogue'])->name('catalogue');
+Route::get('/e-catalogue', [InteriorController::class, 'downloadCatalogue'])->name('e.catalogue');
 Route::get('/cart', [InteriorController::class, 'cart'])->name('cart');
 Route::get('/checkout', [InteriorController::class, 'checkout'])->name('checkout');
 

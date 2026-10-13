@@ -82,7 +82,7 @@
                             <button type="button" class="dit-hero__cta open-consultation-modal">
                                 {{ !empty($slide->button_text) ? $slide->button_text : 'Get Free Consultation' }}
                             </button>
-                            <a class="dit-hero__catalogue open-consultation-modal" href="{{ !empty($slide->catalogue_url) ? $slide->catalogue_url : '#consultation' }}" title="Portfolio Download Now">
+                            <a class="dit-hero__catalogue" href="{{ !empty($slide->catalogue_url) && $slide->catalogue_url !== '#consultation' ? $slide->catalogue_url : route('catalogue') }}" target="_blank" title="Portfolio Download Now">
                                 <img alt="Download Portfolio E-Catalogue" src="{{ asset('images/btn-down.webp') }}" onerror="this.style.display='none'">
                                 <span class="catalogue-fallback-text"><i class="fas fa-download"></i> Portfolio Download Now</span>
                             </a>
@@ -105,7 +105,7 @@
                             <button type="button" class="dit-hero__cta open-consultation-modal">
                                 Get Free Consultation
                             </button>
-                            <a class="dit-hero__catalogue open-consultation-modal" href="#consultation" title="Portfolio Download Now">
+                            <a class="dit-hero__catalogue" href="{{ route('catalogue') }}" target="_blank" title="Portfolio Download Now">
                                 <img alt="Download Portfolio E-Catalogue" src="{{ asset('images/btn-down.webp') }}" onerror="this.style.display='none'">
                                 <span class="catalogue-fallback-text"><i class="fas fa-download"></i> Portfolio Download Now</span>
                             </a>

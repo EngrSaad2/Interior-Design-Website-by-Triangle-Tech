@@ -76,11 +76,15 @@
         <div style="display:grid; grid-template-columns: 2fr 1fr; gap:3.5rem;">
             <!-- Left Main Content -->
             <div>
-                @if($service->featured_image)
-                    <div style="border-radius:var(--radius-lg); overflow:hidden; margin-bottom:2.5rem; box-shadow:var(--shadow-md);">
-                        <img src="{{ asset($service->featured_image) }}" alt="{{ $service->title }}" style="width:100%; height:450px; object-fit:cover;" onerror="this.src='{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}'">
-                    </div>
-                @endif
+                @php
+                    $featImg = $service->featured_image;
+                    if (empty($featImg) || str_contains(strtolower($featImg), 'logo') || str_contains(strtolower($featImg), 'dit.png')) {
+                        $featImg = !empty($service->gallery) ? ($service->gallery[0] ?? 'images/modular-kitchen-design-service.webp') : 'images/modular-kitchen-design-service.webp';
+                    }
+                @endphp
+                <div style="border-radius:var(--radius-lg); overflow:hidden; margin-bottom:2.5rem; box-shadow:var(--shadow-md);">
+                    <img src="{{ asset($featImg) }}" alt="{{ $service->title }}" style="width:100%; height:450px; object-fit:cover;" onerror="this.src='{{ asset('images/modular-kitchen-design-service.webp') }}'">
+                </div>
 
                 <h2 style="font-size:2rem; margin-bottom:1.25rem;">About This Service</h2>
                 <div style="color:var(--color-text-main); font-size:1.05rem; line-height:1.8; margin-bottom:2.5rem; white-space:pre-line;">
@@ -101,13 +105,15 @@
                 </div>
 
                 <!-- Gallery Showcase -->
-                @if(!empty($service->gallery) && count($service->gallery) > 1)
+                @if(!empty($service->gallery) && count($service->gallery) > 0)
                     <h3 style="font-size:1.6rem; margin-bottom:1.5rem;">Project Showcase Gallery</h3>
                     <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-bottom:3rem;">
                         @foreach($service->gallery as $gImg)
-                            <div style="border-radius:var(--radius-sm); overflow:hidden; height:180px;">
-                                <img src="{{ asset($gImg) }}" alt="{{ $service->title }} Photo" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='{{ asset('images/basabo-boys-bedroom-02-1024x768.webp') }}'">
-                            </div>
+                            @if(!str_contains(strtolower($gImg), 'logo') && !str_contains(strtolower($gImg), 'dit.png'))
+                                <div style="border-radius:var(--radius-sm); overflow:hidden; height:180px; box-shadow:var(--shadow-sm); background:#f1f5f9;">
+                                    <img src="{{ asset($gImg) }}" alt="{{ $service->title }} Photo" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='{{ asset('images/modular-kitchen-design-service.webp') }}'">
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                 @endif

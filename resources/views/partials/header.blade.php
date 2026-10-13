@@ -13,8 +13,20 @@
                     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                         <a href="{{ route('home') }}" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item {{ request()->routeIs('shop*') ? 'active' : '' }}">
-                        <a href="{{ route('shop') }}" class="nav-link">Shop</a>
+                    <!-- Shop & Catalogue Dropdown -->
+                    <li class="nav-item has-dropdown {{ request()->routeIs('shop*') || request()->routeIs('product.*') || request()->routeIs('catalogue*') ? 'active' : '' }}">
+                        <a href="{{ route('shop') }}" class="nav-link">
+                            Shop <i class="fas fa-chevron-down chevron"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="{{ route('shop') }}">All Products Collection</a></li>
+                            <li class="dropdown-item"><a href="{{ route('catalogue') }}" target="_blank"><i class="fas fa-file-pdf" style="color:var(--color-primary); margin-right:6px;"></i> Download E-Catalogue (PDF)</a></li>
+                            <li class="dropdown-item"><a href="{{ route('product.detail', 'hafele-90-cm-wall-mounted-chimney-aella-90') }}">Hafele 90 cm Chimney AELLA 90</a></li>
+                            <li class="dropdown-item"><a href="{{ route('product.detail', 'hafele-argento-emerald-r3618') }}">Hafele ARGENTO EMERALD R3618</a></li>
+                            <li class="dropdown-item"><a href="{{ route('product.detail', 'hafele-argento-sapphire-r3618-double-bowl-sink') }}">Hafele SAPPHIRE Double Bowl Sink</a></li>
+                            <li class="dropdown-item"><a href="{{ route('product.detail', 'hafele-topaz-r2418d') }}">Hafele Topaz R2418D Sink</a></li>
+                            <li class="dropdown-item"><a href="{{ route('product.detail', 'kitchen-hood') }}">Modern Kitchen Hoods</a></li>
+                        </ul>
                     </li>
                     <!-- Projects Dropdown -->
                     <li class="nav-item has-dropdown {{ request()->routeIs('projects*') || request()->routeIs('project.*') ? 'active' : '' }}">
@@ -132,7 +144,17 @@
     </div>
     <ul class="mobile-nav-list">
         <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-        <li><a href="{{ route('shop') }}" class="{{ request()->routeIs('shop*') ? 'active' : '' }}">Shop Custom Furniture</a></li>
+        <li>
+            <a href="{{ route('shop') }}" class="{{ request()->routeIs('shop*') ? 'active' : '' }}">Shop & Products</a>
+            <ul style="padding-left:1rem; font-size:0.875rem; list-style:none; margin:0.35rem 0 0.5rem;">
+                <li style="margin:0.25rem 0;"><a href="{{ route('shop') }}" style="color:#64748b;">All Products Collection</a></li>
+                <li style="margin:0.25rem 0;"><a href="{{ route('catalogue') }}" target="_blank" style="color:var(--color-primary); font-weight:600;"><i class="fas fa-file-pdf"></i> Download E-Catalogue (PDF)</a></li>
+                <li style="margin:0.25rem 0;"><a href="{{ route('product.detail', 'hafele-90-cm-wall-mounted-chimney-aella-90') }}" style="color:#64748b;">Hafele Chimney AELLA 90</a></li>
+                <li style="margin:0.25rem 0;"><a href="{{ route('product.detail', 'hafele-argento-emerald-r3618') }}" style="color:#64748b;">Hafele Emerald R3618 Sink</a></li>
+                <li style="margin:0.25rem 0;"><a href="{{ route('product.detail', 'hafele-argento-sapphire-r3618-double-bowl-sink') }}" style="color:#64748b;">Hafele Sapphire Double Sink</a></li>
+                <li style="margin:0.25rem 0;"><a href="{{ route('product.detail', 'hafele-topaz-r2418d') }}" style="color:#64748b;">Hafele Topaz R2418D Sink</a></li>
+            </ul>
+        </li>
         <li><a href="{{ route('projects') }}" class="{{ request()->routeIs('projects*') ? 'active' : '' }}">Completed Projects</a></li>
         <li><a href="{{ route('why.choose') }}" class="{{ request()->routeIs('why.choose') ? 'active' : '' }}">Why Choose Us</a></li>
         <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services*') ? 'active' : '' }}">Our 10 Services</a></li>

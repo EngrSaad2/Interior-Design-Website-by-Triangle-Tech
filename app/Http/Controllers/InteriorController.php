@@ -59,9 +59,13 @@ class InteriorController extends Controller
     public function serviceDetail($slug)
     {
         $settings = $this->getSettings();
-        $service = Service::where('slug', $slug)->firstOrFail();
+        $slugClean = \Illuminate\Support\Str::slug($slug);
+        $service = Service::where('slug', $slug)
+            ->orWhere('slug', $slugClean)
+            ->orWhere('slug', str_replace(' ', '-', strtolower($slug)))
+            ->firstOrFail();
         $allServices = Service::where('is_active', true)->where('id', '!=', $service->id)->get();
-        $relatedProjects = Project::where('category', 'like', '%' . explode('-', $slug)[0] . '%')->take(4)->get();
+        $relatedProjects = Project::where('category', 'like', '%' . explode('-', $service->slug)[0] . '%')->take(4)->get();
         if ($relatedProjects->isEmpty()) {
             $relatedProjects = Project::inRandomOrder()->take(4)->get();
         }
@@ -156,9 +160,25 @@ class InteriorController extends Controller
     public function productDetail($slug)
     {
         $settings = $this->getSettings();
-        $product = Product::where('slug', $slug)->firstOrFail();
+        $slugClean = \Illuminate\Support\Str::slug($slug);
+        $product = Product::where('slug', $slug)
+            ->orWhere('slug', $slugClean)
+            ->orWhere('slug', str_replace(' ', '-', strtolower($slug)))
+            ->firstOrFail();
         $relatedProducts = Product::where('id', '!=', $product->id)->take(4)->get();
         return view('pages.product-detail', compact('settings', 'product', 'relatedProducts'));
+    }
+
+    public function downloadCatalogue()
+    {
+        $file = public_path('documents/triangle-interior-design-catalogue.pdf');
+        if (file_exists($file)) {
+            return response()->file($file, [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="Triangle-Interior-Design-Portfolio-Catalogue.pdf"'
+            ]);
+        }
+        return redirect()->route('shop');
     }
 
     public function cart()
