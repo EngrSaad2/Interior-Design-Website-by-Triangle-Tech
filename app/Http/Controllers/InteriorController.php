@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Testimonial;
 use App\Models\Inquiry;
 use App\Models\SiteSetting;
+use App\Models\Slider;
 
 class InteriorController extends Controller
 {
@@ -23,6 +24,7 @@ class InteriorController extends Controller
     public function index()
     {
         $settings = $this->getSettings();
+        $sliders = Slider::where('is_active', true)->orderBy('sort_order')->get();
         $services = Service::where('is_active', true)->orderBy('sort_order')->take(8)->get();
         $featuredProjects = Project::where('is_featured', true)->take(6)->get();
         if ($featuredProjects->isEmpty()) {
@@ -36,6 +38,7 @@ class InteriorController extends Controller
 
         return view('pages.home', compact(
             'settings',
+            'sliders',
             'services',
             'featuredProjects',
             'latestProjects',

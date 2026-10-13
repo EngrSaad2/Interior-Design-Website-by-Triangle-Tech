@@ -40,7 +40,7 @@
                     1920, Koborsthan Road, East Badda, Dhaka 1212, Bangladesh
                 </p>
                 <div style="font-size:0.875rem; color:var(--color-text-main); font-weight:600;">
-                    <i class="fas fa-phone-alt" style="color:var(--color-primary-dark); margin-right:0.3rem;"></i> +8801611644811
+                    <i class="fas fa-phone-alt" style="color:var(--color-primary-dark); margin-right:0.3rem;"></i> +8801810536303
                 </div>
             </div>
 

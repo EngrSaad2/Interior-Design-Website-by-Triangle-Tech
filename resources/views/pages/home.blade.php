@@ -61,65 +61,41 @@
      ========================================================================== -->
 <section class="dit-hero" id="ditHero" data-autoplay="5000" aria-label="Slides" aria-roledescription="carousel" style="--dit-overlay-strength: 0.75;">
     <div class="dit-hero__viewport">
-        <!-- Slide 1: We Believe Quality Produces Luxury (Matches reference screenshot!) -->
-        <div class="dit-hero__slide is-active" role="group" aria-roledescription="slide" aria-hidden="false" id="heroSlide1">
-            <div class="dit-hero__bg" role="img" aria-label="Luxury Bedroom Interior" style="background-image:url('{{ asset('images/banner-4.webp') }}');"></div>
-            <div class="dit-hero__inner">
-                <div class="dit-hero__contents">
-                    <h2 class="dit-hero__heading">
-                        We Believe<br><span class="highlight">Quality</span> Produces <span class="highlight">Luxury</span>
-                    </h2>
-                    <p class="dit-hero__desc">
-                        At Triangle Interior Design, Quality Produces Luxury. It begins with thoughtful proportions, well-chosen materials, and precise finishes. Our West Badda manufacturing facility connects bespoke furniture with the design process. We check the details from production to installation, creating a refined home made for everyday living.
-                    </p>
+        @forelse($sliders as $index => $slide)
+            <div class="dit-hero__slide {{ $index === 0 ? 'is-active' : '' }}" role="group" aria-roledescription="slide" aria-hidden="{{ $index === 0 ? 'false' : 'true' }}" id="heroSlide{{ $slide->id }}">
+                <div class="dit-hero__bg" role="img" aria-label="{{ $slide->title ?? 'Interior Slide' }}" style="background-image:url('{{ asset($slide->image) }}');"></div>
+                <div class="dit-hero__inner">
+                    <div class="dit-hero__contents">
+                        <h2 class="dit-hero__heading">
+                            @if(!empty($slide->highlight_word) && str_contains($slide->title, $slide->highlight_word))
+                                {!! str_replace($slide->highlight_word, '<span class="highlight">' . e($slide->highlight_word) . '</span>', e($slide->title)) !!}
+                            @else
+                                {{ $slide->title }}
+                            @endif
+                        </h2>
+                        @if(!empty($slide->subtitle))
+                            <p class="dit-hero__desc">
+                                {{ $slide->subtitle }}
+                            </p>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Slide 2: Best Interior Design Company in Bangladesh -->
-        <div class="dit-hero__slide" role="group" aria-roledescription="slide" aria-hidden="true" id="heroSlide2">
-            <div class="dit-hero__bg" role="img" aria-label="Modern Living Room Interior" style="background-image:url('{{ asset('images/banner-1.webp') }}');"></div>
-            <div class="dit-hero__inner">
-                <div class="dit-hero__contents">
-                    <h1 class="dit-hero__heading">
-                        Best <span class="highlight">Interior Design</span> Company <br> in <span class="highlight">Bangladesh</span>
-                    </h1>
-                    <p class="dit-hero__desc">
-                        Triangle Interior Design brings luxury home interiors to life through thoughtful design and turnkey execution. Based in Mohakhali New DOHS, Dhaka, we have completed 500+ projects since 2011. From a new apartment to a family house, our team coordinates space planning, bespoke furniture, and installation around the way you want to live.
-                    </p>
+        @empty
+            <div class="dit-hero__slide is-active" role="group" aria-roledescription="slide" aria-hidden="false" id="heroSlideDefault">
+                <div class="dit-hero__bg" role="img" aria-label="Luxury Interior" style="background-image:url('{{ asset('images/banner-1.webp') }}');"></div>
+                <div class="dit-hero__inner">
+                    <div class="dit-hero__contents">
+                        <h2 class="dit-hero__heading">
+                            We Believe<br><span class="highlight">Quality</span> Produces <span class="highlight">Luxury</span>
+                        </h2>
+                        <p class="dit-hero__desc">
+                            At Triangle Interior Design, Quality Produces Luxury. It begins with thoughtful proportions, well-chosen materials, and precise finishes.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Slide 3: Design your dream home from scratch -->
-        <div class="dit-hero__slide" role="group" aria-roledescription="slide" aria-hidden="true" id="heroSlide3">
-            <div class="dit-hero__bg" role="img" aria-label="Dining Room Interior" style="background-image:url('{{ asset('images/banner-2.webp') }}');"></div>
-            <div class="dit-hero__inner">
-                <div class="dit-hero__contents">
-                    <h2 class="dit-hero__heading">
-                        Design your <span class="highlight">dream home</span> <br>from <span class="highlight">scratch</span>
-                    </h2>
-                    <p class="dit-hero__desc">
-                        Whether you are moving into a new flat or renovating a family home, Triangle Interior Design designs each space around your lifestyle, your taste, and your priorities. From the first concept to the final furniture placement, we bring layout, materials, lighting, and craftsmanship together so your home feels distinctly yours.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Specialized in home interior design -->
-        <div class="dit-hero__slide" role="group" aria-roledescription="slide" aria-hidden="true" id="heroSlide4">
-            <div class="dit-hero__bg" role="img" aria-label="Modern Kitchen Interior" style="background-image:url('{{ asset('images/banner-3.webp') }}');"></div>
-            <div class="dit-hero__inner">
-                <div class="dit-hero__contents">
-                    <h2 class="dit-hero__heading">
-                        Specialized in <br><span class="highlight">home interior</span> design
-                    </h2>
-                    <p class="dit-hero__desc">
-                        Triangle Interior Design specializes in home interior design, from bespoke master bedrooms to elegant modular kitchens and custom furniture crafted in our own factory.
-                    </p>
-                </div>
-            </div>
-        </div>
+        @endforelse
     </div>
 
     <!-- Hero Overlaid Actions (Matches ditstudio layout) -->
