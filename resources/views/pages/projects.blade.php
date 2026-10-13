@@ -38,10 +38,12 @@
             @forelse($projects as $project)
                 <div class="project-card">
                     <div class="project-card-thumb">
-                        <img src="{{ asset($project->featured_image) }}" alt="{{ $project->title }}" onerror="this.src='{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}'">
+                        <a href="{{ route('project.detail', $project->slug) }}" style="display:block; width:100%; height:100%;">
+                            <img src="{{ asset($project->featured_image) }}" alt="{{ $project->title }}" onerror="this.src='{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}'">
+                        </a>
                         <span class="project-card-category">{{ $project->category ?? 'Interior Design' }}</span>
                         <div class="project-card-overlay">
-                            <a href="{{ route('project.detail', $project->slug) }}" class="btn btn-primary" style="padding:0.5rem 1.25rem; font-size:0.85rem;">
+                            <a href="{{ route('project.detail', $project->slug) }}" class="btn btn-primary" style="padding:0.55rem 1.35rem; font-size:0.85rem; border-radius:50px;">
                                 View Project Details
                             </a>
                         </div>

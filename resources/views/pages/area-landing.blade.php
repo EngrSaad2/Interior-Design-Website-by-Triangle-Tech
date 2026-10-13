@@ -59,7 +59,9 @@
                 @foreach($projects as $proj)
                     <div class="project-card">
                         <div class="project-card-thumb">
-                            <img src="{{ asset($proj->featured_image) }}" alt="{{ $proj->title }}" onerror="this.src='{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}'">
+                            <a href="{{ route('project.detail', $proj->slug) }}" style="display:block; width:100%; height:100%;">
+                                <img src="{{ asset($proj->featured_image) }}" alt="{{ $proj->title }}" onerror="this.src='{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}'">
+                            </a>
                             <span class="project-card-category">{{ $proj->category }}</span>
                         </div>
                         <div class="project-card-body">
