@@ -50,7 +50,7 @@
         </div>
 
         <div style="margin-top:3.5rem; display:flex; justify-content:center;">
-            {{ $products->links() }}
+            {{ $products->links('partials.pagination') }}
         </div>
     </div>
 </section>

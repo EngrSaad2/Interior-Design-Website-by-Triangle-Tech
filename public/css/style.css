@@ -1987,3 +1987,88 @@ ul {
     opacity: 1;
     visibility: visible;
 }
+
+/* ==========================================================================
+   PAGINATION STYLING & SVG OVERRIDE
+   ========================================================================== */
+nav[role="navigation"] svg {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    width: 100%;
+}
+
+.custom-pagination {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.custom-pagination .page-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-pagination .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 0.85rem;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #1f242e;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    user-select: none;
+}
+
+.custom-pagination .page-link:hover {
+    background: #eb2449;
+    border-color: #eb2449;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(235, 36, 73, 0.25);
+}
+
+.custom-pagination .page-item.active .page-link {
+    background: #eb2449;
+    border-color: #eb2449;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(235, 36, 73, 0.35);
+    cursor: default;
+    transform: none;
+}
+
+.custom-pagination .page-item.disabled .page-link {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+

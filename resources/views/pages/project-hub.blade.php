@@ -59,7 +59,7 @@
         </div>
 
         <div style="margin-top:3.5rem; display:flex; justify-content:center;">
-            {{ $projects->links() }}
+            {{ $projects->links('partials.pagination') }}
         </div>
     </div>
 </section>

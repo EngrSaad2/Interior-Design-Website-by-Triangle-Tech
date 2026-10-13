@@ -52,7 +52,7 @@
         </div>
 
         <div style="margin-top:3.5rem; display:flex; justify-content:center;">
-            {{ $blogs->links() }}
+            {{ $blogs->links('partials.pagination') }}
         </div>
     </div>
 </section>

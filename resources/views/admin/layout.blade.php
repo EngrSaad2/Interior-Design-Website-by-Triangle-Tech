@@ -16,6 +16,56 @@
         :root {
             --primary: #d32f2f;
         }
+        .pagination-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0 0.5rem;
+            width: 100%;
+        }
+        .custom-pagination {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        .custom-pagination .page-item { list-style: none; }
+        .custom-pagination .page-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            padding: 0 0.75rem;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .custom-pagination .page-link:hover {
+            background: #d32f2f;
+            border-color: #d32f2f;
+            color: #ffffff;
+        }
+        .custom-pagination .page-item.active .page-link {
+            background: #d32f2f;
+            border-color: #d32f2f;
+            color: #ffffff;
+        }
+        .custom-pagination .page-item.disabled .page-link {
+            background: #f8fafc;
+            border-color: #f1f5f9;
+            color: #94a3b8;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
     </style>
     @stack('styles')
 </head>
