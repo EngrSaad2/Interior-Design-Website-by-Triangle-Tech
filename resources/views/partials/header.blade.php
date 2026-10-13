@@ -145,7 +145,7 @@
             Book Free Consultation
         </button>
         <div class="mobile-drawer-contact">
-            <div><a href="tel:+8801810536303" style="color:inherit;"><i class="fas fa-phone-alt"></i> +8801810536303</a></div>
+            <div><a href="tel:+8801904654712" style="color:inherit;"><i class="fas fa-phone-alt"></i> +8801904654712</a></div>
             <div><a href="mailto:{{ $settings['email'] ?? 'info@triangleinterior.com' }}" style="color:inherit;"><i class="fas fa-envelope"></i> {{ $settings['email'] ?? 'info@triangleinterior.com' }}</a></div>
             <div><i class="fas fa-map-marker-alt"></i> Mohakhali New DOHS, Dhaka</div>
         </div>

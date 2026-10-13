@@ -45,7 +45,7 @@ Primary SEO Target Keyword: **Interior Design Website**
 - **Lead Capture & Consultation**:
   - Universal consultation modal accessible across all page sections.
   - Real-time client-side and server-side validation with instant response feedback.
-  - WhatsApp direct connect integration (+8801810536303).
+  - WhatsApp direct connect integration (+8801904654712).
 - **Developer Attribution**:
   - Footer credits linking to Engr Saad (engr-saad.com).
 

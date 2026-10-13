@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Interior Design Website – Best Interior Design Company in Bangladesh | Triangle Interior Design')</title>
-    <meta name="description" content="@yield('meta_description', 'Triangle Interior Design is the top-rated Interior Design Website and fit-out firm in Bangladesh. Discover award-winning residential & commercial interior architecture, luxury living, and custom factory joinery. Call +8801810536303.')">
+    <meta name="description" content="@yield('meta_description', 'Triangle Interior Design is the top-rated Interior Design Website and fit-out firm in Bangladesh. Discover award-winning residential & commercial interior architecture, luxury living, and custom factory joinery. Call +8801904654712.')">
     <meta name="keywords" content="@yield('meta_keywords', 'Interior Design Website, best interior design website, luxury interior design website, modern interior design website, interior design website bangladesh, interior design company dhaka, best interior designer, luxury home interior, modular kitchen design dhaka, duplex interior design, turnkey interior firm, apartment interior design, office interior design bangladesh')">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Triangle Interior Design">
@@ -54,7 +54,7 @@
           "url": "{{ url('/') }}",
           "logo": "{{ asset('images/triangle-logo.svg') }}",
           "image": "{{ asset('images/banner-4.webp') }}",
-          "telephone": "+8801810536303",
+          "telephone": "+8801904654712",
           "email": "info@triangleinterior.com",
           "priceRange": "৳৳ - ৳৳৳",
           "address": {
@@ -146,17 +146,17 @@
 
     <!-- Floating Actions (WhatsApp) -->
     <div class="floating-actions">
-        <a href="https://wa.me/8801810536303" target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" title="Chat on WhatsApp" id="floatingWhatsappBtn" aria-label="WhatsApp">
+        <a href="https://wa.me/8801904654712" target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" title="Chat on WhatsApp" id="floatingWhatsappBtn" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
     <!-- Mobile Sticky Bottom Action Bar (Matches ditstudio CALL NOW | WHATSAPP) -->
     <div class="mobile-sticky-bottom-bar" id="mobileStickyBottomBar">
-        <a href="tel:+8801810536303" class="bottom-action-btn bottom-call-btn" id="mobileBottomCallBtn">
+        <a href="tel:+8801904654712" class="bottom-action-btn bottom-call-btn" id="mobileBottomCallBtn">
             CALL NOW
         </a>
-        <a href="https://wa.me/8801810536303" class="bottom-action-btn bottom-whatsapp-btn" id="mobileBottomWhatsappBtn" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/8801904654712" class="bottom-action-btn bottom-whatsapp-btn" id="mobileBottomWhatsappBtn" target="_blank" rel="noopener noreferrer">
             WHATSAPP
         </a>
     </div>
@@ -176,7 +176,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="modal_phone">Phone Number *</label>
-                    <input type="tel" name="phone" id="modal_phone" class="form-control" placeholder="e.g. +8801810536303" required>
+                    <input type="tel" name="phone" id="modal_phone" class="form-control" placeholder="e.g. +8801904654712" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="modal_location">Project Location</label>

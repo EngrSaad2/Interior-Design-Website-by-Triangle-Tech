@@ -39,8 +39,8 @@
             <h3 style="font-size:1.6rem; margin-bottom:0.75rem;">Still Have Questions?</h3>
             <p style="color:var(--color-text-muted); margin-bottom:1.5rem;">Speak with an interior architect right now or visit our Mohakhali studio.</p>
             <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-                <a href="tel:{{ $settings['phone'] ?? '+8801810536303' }}" class="btn btn-dark">
-                    <i class="fas fa-phone-alt"></i> Call {{ $settings['phone_display'] ?? '01810 536 303' }}
+                <a href="tel:{{ $settings['phone'] ?? '+8801904654712' }}" class="btn btn-dark">
+                    <i class="fas fa-phone-alt"></i> Call {{ $settings['phone_display'] ?? '01904 654 712' }}
                 </a>
                 <button type="button" class="btn btn-primary open-consultation-modal">
                     <i class="fas fa-calendar-check"></i> Book Consultation

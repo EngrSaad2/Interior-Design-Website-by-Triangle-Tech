@@ -10,9 +10,9 @@
                     Triangle Interior Design is a premier architectural and interior design firm in Bangladesh, delivering over 500+ residential and commercial transformations since 2011. Operating our own custom manufacturing facility in West Badda gives us end-to-end quality control and punctuality.
                 </p>
                 <div class="footer-socials">
-                    <a href="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="{{ $settings['youtube'] ?? 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ' }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/8801810536303" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="{{ $settings['facebook'] ?? 'https://wa.me/8801904654712' }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ $settings['youtube'] ?? 'https://wa.me/8801904654712' }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="{{ $settings['whatsapp'] ?? 'https://wa.me/8801904654712' }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -64,10 +64,10 @@
                 <div class="footer-contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                        <a href="tel:+8801810536303" style="color:#ffffff; font-weight:600;">
-                            +8801810536303 (Hotline)
+                        <a href="tel:+8801904654712" style="color:#ffffff; font-weight:600;">
+                            +8801904654712 (Hotline)
                         </a>
-                        <span style="display:block; font-size:0.8rem; color:#94a3b8;">Factory: +8801810536303</span>
+                        <span style="display:block; font-size:0.8rem; color:#94a3b8;">Factory: +8801904654712</span>
                     </div>
                 </div>
                 <div class="footer-contact-item">

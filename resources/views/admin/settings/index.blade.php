@@ -43,11 +43,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Direct Hotline *</label>
-                        <input type="text" name="hotline" value="{{ $settings['hotline'] ?? '+8801810536303' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
+                        <input type="text" name="hotline" value="{{ $settings['hotline'] ?? '+8801904654712' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Factory Phone</label>
-                        <input type="text" name="factory_phone" value="{{ $settings['factory_phone'] ?? '+8801810536303' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
+                        <input type="text" name="factory_phone" value="{{ $settings['factory_phone'] ?? '+8801904654712' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Official Email</label>
@@ -81,15 +81,15 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">WhatsApp Number</label>
-                        <input type="text" name="whatsapp" value="{{ $settings['whatsapp'] ?? '8801810536303' }}" placeholder="8801810536303" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
+                        <input type="text" name="whatsapp" value="{{ $settings['whatsapp'] ?? '8801904654712' }}" placeholder="8801904654712" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Facebook URL</label>
-                        <input type="url" name="facebook" value="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none">
+                        <input type="url" name="facebook" value="{{ $settings['facebook'] ?? 'https://wa.me/8801904654712' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">YouTube URL</label>
-                        <input type="url" name="youtube" value="{{ $settings['youtube'] ?? 'https://www.youtube.com/@ditstudiobd' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none">
+                        <input type="url" name="youtube" value="{{ $settings['youtube'] ?? 'https://wa.me/8801904654712' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-rose-500 focus:outline-none">
                     </div>
                 </div>
             </div>

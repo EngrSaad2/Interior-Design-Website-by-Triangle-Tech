@@ -40,7 +40,7 @@
   "provider": {
     "@@type": "LocalBusiness",
     "name": "Triangle Interior Design",
-    "telephone": "+8801810536303"
+    "telephone": "+8801904654712"
   },
   "areaServed": "Bangladesh",
   "description": "{{ Str::limit(strip_tags($service->description), 200) }}",

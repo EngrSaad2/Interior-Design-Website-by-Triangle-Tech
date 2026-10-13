@@ -40,7 +40,7 @@
                     1920, Koborsthan Road, East Badda, Dhaka 1212, Bangladesh
                 </p>
                 <div style="font-size:0.875rem; color:var(--color-text-main); font-weight:600;">
-                    <i class="fas fa-phone-alt" style="color:var(--color-primary-dark); margin-right:0.3rem;"></i> +8801810536303
+                    <i class="fas fa-phone-alt" style="color:var(--color-primary-dark); margin-right:0.3rem;"></i> +8801904654712
                 </div>
             </div>
 
@@ -53,8 +53,8 @@
                     Call us for quick quotes or instant site survey scheduling.
                 </p>
                 <div style="font-size:0.95rem; font-weight:700;">
-                    <a href="tel:{{ $settings['phone'] ?? '+8801810536303' }}" style="color:var(--color-primary-dark);">
-                        {{ $settings['phone_display'] ?? '01810 536 303' }}
+                    <a href="tel:{{ $settings['phone'] ?? '+8801904654712' }}" style="color:var(--color-primary-dark);">
+                        {{ $settings['phone_display'] ?? '01904 654 712' }}
                     </a>
                 </div>
                 <div style="font-size:0.85rem; color:var(--color-text-muted); margin-top:0.3rem;">
