@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /cart
 Disallow: /checkout
 Disallow: /inquiry
-Disallow: /cart
 
-# XML Sitemaps
-Sitemap: http://localhost/interior/public/sitemap.xml
+# Google XML Sitemaps
+Sitemap: https://interior.triangletech.com.bd/sitemap.xml
