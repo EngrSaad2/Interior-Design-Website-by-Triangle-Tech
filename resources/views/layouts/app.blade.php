@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Best Interior Design Company in Bangladesh – DIT Studio')</title>
-    <meta name="description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? DIT Studio has delivered 500+ stunning homes in Dhaka & Chittagong. Get a free quote!')">
+    <title>@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')</title>
+    <meta name="description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? Triangle Interior Design has delivered 500+ stunning homes in Dhaka & Chittagong. Get a free quote!')">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph / SEO -->
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="DIT Studio - Interior Specialist" />
+    <meta property="og:site_name" content="Triangle Interior Design" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – DIT Studio')" />
-    <meta property="og:description" content="@yield('meta_description', 'DIT Studio - Leading Interior Design firm with 500+ projects completed.')" />
+    <meta property="og:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')" />
+    <meta property="og:description" content="@yield('meta_description', 'Triangle Interior Design - Leading Interior Design firm with 500+ projects completed.')" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="{{ asset('images/dit-studio-logo.webp') }}" />
+    <meta property="og:image" content="{{ asset('images/triangle-logo.svg') }}" />
 
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
         <a href="https://wa.me/8801633033033" target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" title="Chat on WhatsApp" id="floatingWhatsappBtn">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <button class="float-btn float-top" title="Back to Top" id="backToTopBtn">
+        <button class="float-btn float-top" title="Back to Top" id="backToTopBtn" aria-label="Back to Top">
             <i class="fas fa-chevron-up"></i>
         </button>
     </div>
@@ -58,8 +58,8 @@
     <div class="modal-overlay" id="consultationModal">
         <div class="modal-dialog">
             <button class="modal-close" aria-label="Close Modal">&times;</button>
-            <h3 style="color:#ffffff; font-size:1.6rem; margin-bottom:0.5rem; font-family:var(--font-heading);">Book A Free Consultation</h3>
-            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1.5rem;">Speak directly with our senior interior architects & get an itemized budget quote.</p>
+            <h3 style="color:#ffffff; font-size:1.6rem; margin-bottom:0.5rem; font-family:var(--font-heading);">Book Free 3D Consultation</h3>
+            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1.5rem;">Speak with Triangle Interior Design senior architects & get an itemized budget quote.</p>
 
             <form action="{{ route('inquiry.submit') }}" method="POST">
                 @csrf
@@ -101,7 +101,7 @@
         <div style="background:#14171d; width:100%; max-width:400px; height:100vh; padding:2rem; display:flex; flex-direction:column; border-left:1px solid rgba(197,168,128,0.3);">
             <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:1rem;">
                 <h4 style="color:#ffffff; font-size:1.25rem;"><i class="fas fa-shopping-bag" style="color:var(--color-primary); margin-right:0.5rem;"></i> Shopping Bag</h4>
-                <button class="cart-drawer-close" style="background:none; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer;">&times;</button>
+                <button class="cart-drawer-close" style="background:none; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer;" aria-label="Close Cart">&times;</button>
             </div>
             <div id="cartDrawerItems" style="flex-grow:1; overflow-y:auto; padding:1rem 0;"></div>
             <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:1.25rem;">

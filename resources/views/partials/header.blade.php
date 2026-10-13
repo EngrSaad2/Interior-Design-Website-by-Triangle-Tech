@@ -8,13 +8,13 @@
             <a href="mailto:{{ $settings['email'] ?? 'info.ditbd@gmail.com' }}" id="topBarEmail">
                 <i class="fas fa-envelope" style="color:var(--color-primary);"></i> {{ $settings['email'] ?? 'info.ditbd@gmail.com' }}
             </a>
-            <span style="display:inline-flex; align-items:center; gap:0.4rem;">
+            <span class="top-bar-hours">
                 <i class="fas fa-clock" style="color:var(--color-primary);"></i> Sat - Thu: 9:00 AM - 6:00 PM
             </span>
         </div>
         <div class="top-bar-right">
             <span><i class="fas fa-map-marker-alt" style="color:var(--color-primary);"></i> Mohakhali New DOHS, Dhaka</span>
-            <div style="display:inline-flex; gap:0.75rem;">
+            <div class="top-bar-socials">
                 <a href="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="{{ $settings['youtube'] ?? 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ' }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="{{ $settings['whatsapp'] ?? 'https://wa.me/8801633033033' }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -29,7 +29,7 @@
         <div class="header-inner">
             <!-- Brand Logo -->
             <a href="{{ route('home') }}" class="site-logo" id="siteLogo">
-                <img src="{{ asset('images/dit-studio-logo.webp') }}" alt="DIT Studio - Interior Specialist" style="height: 42px; width: auto; object-fit: contain;">
+                <img src="{{ asset('images/triangle-logo.svg') }}" alt="Triangle Interior Design" class="header-logo-img">
             </a>
 
             <!-- Desktop Navigation -->
@@ -41,7 +41,7 @@
                     <li class="nav-item {{ request()->routeIs('shop*') ? 'active' : '' }}">
                         <a href="{{ route('shop') }}" class="nav-link">Shop</a>
                     </li>
-                    <!-- Projects Mega Dropdown -->
+                    <!-- Projects Dropdown -->
                     <li class="nav-item {{ request()->routeIs('projects*') || request()->routeIs('project.*') ? 'active' : '' }}">
                         <a href="{{ route('projects') }}" class="nav-link">
                             Projects <i class="fas fa-chevron-down chevron"></i>
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li class="nav-item {{ request()->routeIs('why.choose') ? 'active' : '' }}">
-                        <a href="{{ route('why.choose') }}" class="nav-link">Why Choose DIT?</a>
+                        <a href="{{ route('why.choose') }}" class="nav-link">Why Choose Us?</a>
                     </li>
                     <!-- Services Dropdown -->
                     <li class="nav-item {{ request()->routeIs('services*') || request()->routeIs('service.*') ? 'active' : '' }}">
@@ -104,7 +104,7 @@
                 </button>
 
                 <button type="button" class="btn-consultation open-consultation-modal" id="headerConsultBtn">
-                    <i class="fas fa-calendar-check"></i> Free Quote
+                    <i class="fas fa-calendar-check"></i> <span>Free Quote</span>
                 </button>
 
                 <button type="button" class="mobile-toggle" aria-label="Open Navigation">
@@ -116,34 +116,32 @@
 </header>
 
 <!-- Mobile Navigation Drawer -->
-<div class="mobile-nav-drawer" style="position:fixed; top:0; left:0; width:300px; height:100vh; background:#0e1013; z-index:2500; transform:translateX(-100%); transition:transform 0.35s ease; padding:2rem; overflow-y:auto; border-right:1px solid rgba(197,168,128,0.2);">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem;">
-        <div style="font-weight:800; font-size:1.2rem; color:#fff;">DIT STUDIO</div>
-        <button class="mobile-nav-close" style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+        <img src="{{ asset('images/triangle-logo.svg') }}" alt="Triangle Interior Design" style="height:36px; width:auto;">
+        <button class="mobile-nav-close" aria-label="Close Navigation">&times;</button>
     </div>
-    <ul style="display:flex; flex-direction:column; gap:1.25rem;">
-        <li><a href="{{ route('home') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Home</a></li>
-        <li><a href="{{ route('shop') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Shop</a></li>
-        <li><a href="{{ route('projects') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Projects Portfolio</a></li>
-        <li><a href="{{ route('why.choose') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Why Choose DIT?</a></li>
-        <li><a href="{{ route('services') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Our Services</a></li>
-        <li><a href="{{ route('blogs') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Blogs & Guides</a></li>
-        <li><a href="{{ route('faqs') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">FAQs</a></li>
-        <li><a href="{{ route('contact') }}" style="color:#fff; font-weight:600; font-size:1.05rem;">Contact Us</a></li>
+    <ul class="mobile-nav-list">
+        <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{ route('shop') }}" class="{{ request()->routeIs('shop*') ? 'active' : '' }}">Shop Custom Furniture</a></li>
+        <li><a href="{{ route('projects') }}" class="{{ request()->routeIs('projects*') ? 'active' : '' }}">Completed Projects</a></li>
+        <li><a href="{{ route('why.choose') }}" class="{{ request()->routeIs('why.choose') ? 'active' : '' }}">Why Choose Us</a></li>
+        <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services*') ? 'active' : '' }}">Our 10 Services</a></li>
+        <li><a href="{{ route('blogs') }}" class="{{ request()->routeIs('blogs*') ? 'active' : '' }}">Design Articles</a></li>
+        <li><a href="{{ route('faqs') }}" class="{{ request()->routeIs('faqs') ? 'active' : '' }}">38 FAQs</a></li>
+        <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact & Studio</a></li>
     </ul>
-    <div style="margin-top:2.5rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
+    <div class="mobile-drawer-footer">
         <button class="btn btn-primary open-consultation-modal" style="width:100%; border-radius:50px;">
             Book Free Consultation
         </button>
-        <div style="margin-top:1.5rem; color:#94a3b8; font-size:0.85rem; line-height:1.6;">
-            <div><i class="fas fa-phone-alt" style="color:var(--color-primary); margin-right:0.4rem;"></i> {{ $settings['phone'] ?? '+8801633033033' }}</div>
-            <div style="margin-top:0.5rem;"><i class="fas fa-envelope" style="color:var(--color-primary); margin-right:0.4rem;"></i> {{ $settings['email'] ?? 'info.ditbd@gmail.com' }}</div>
+        <div class="mobile-drawer-contact">
+            <div><i class="fas fa-phone-alt"></i> {{ $settings['phone_display'] ?? '01633 033 033' }}</div>
+            <div><i class="fas fa-envelope"></i> {{ $settings['email'] ?? 'info.ditbd@gmail.com' }}</div>
+            <div><i class="fas fa-map-marker-alt"></i> Mohakhali New DOHS, Dhaka</div>
         </div>
     </div>
 </div>
 
-<style>
-.mobile-nav-drawer.open {
-    transform: translateX(0) !important;
-}
-</style>
+<!-- Mobile Drawer Backdrop Overlay -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>

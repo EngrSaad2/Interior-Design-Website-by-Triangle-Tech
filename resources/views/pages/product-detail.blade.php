@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product->title . ' – DIT Studio Custom Furniture')
+@section('title', $product->title . ' – Triangle Interior Design Custom Furniture')
 @section('meta_description', Str::limit(strip_tags($product->short_description ?: $product->description), 155))
 
 @section('content')
@@ -74,7 +74,7 @@
                             data-image="{{ asset($product->image) }}">
                         <i class="fas fa-shopping-bag"></i> Add to Shopping Bag
                     </button>
-                    <a href="https://wa.me/8801633033033?text=Hi%20DIT%20Studio,%20I%20want%20to%20order%20{{ urlencode($product->title) }}" target="_blank" rel="noopener noreferrer" class="btn" style="background:#25d366; color:#fff; padding:1rem 1.5rem;">
+                    <a href="https://wa.me/8801633033033?text=Hi%20Triangle%20Studio,%20I%20want%20to%20order%20{{ urlencode($product->title) }}" target="_blank" rel="noopener noreferrer" class="btn" style="background:#25d366; color:#fff; padding:1rem 1.5rem;">
                         <i class="fab fa-whatsapp"></i> Order on WhatsApp
                     </a>
                 </div>

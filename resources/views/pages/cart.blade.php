@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Shopping Cart – DIT Studio Custom Furniture')
-@section('meta_description', 'Review your selected custom furniture items from DIT Studio.')
+@section('title', 'Shopping Cart – Triangle Interior Design Custom Furniture')
+@section('meta_description', 'Review your selected custom furniture items from Triangle Interior Design.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:4rem 0 3rem 0;">

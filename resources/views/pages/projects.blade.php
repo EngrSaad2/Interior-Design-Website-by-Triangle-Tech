@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Interior Design Projects in Bangladesh – DIT Studio Portfolio')
-@section('meta_description', 'Explore 500+ completed luxury interior design projects in Dhaka and across Bangladesh by DIT Studio. View bedrooms, modular kitchens, living rooms, and closets.')
+@section('title', 'Interior Design Projects in Bangladesh – Triangle Interior Design Portfolio')
+@section('meta_description', 'Explore 500+ completed luxury interior design projects in Dhaka and across Bangladesh by Triangle Interior Design. View bedrooms, modular kitchens, living rooms, and closets.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">

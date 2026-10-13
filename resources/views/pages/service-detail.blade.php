@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $service->title . ' in Bangladesh – DIT Studio')
+@section('title', $service->title . ' in Bangladesh – Triangle Interior Design')
 @section('meta_description', Str::limit(strip_tags($service->excerpt ?: $service->description), 155))
 
 @section('content')

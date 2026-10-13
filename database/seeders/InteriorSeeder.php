@@ -208,7 +208,7 @@ class InteriorSeeder extends Seeder
 
         // 8. Site Settings
         $settings = [
-            'site_name' => 'DIT Studio',
+            'site_name' => 'Triangle Interior Design',
             'tagline' => 'Best Interior Design Company in Bangladesh',
             'phone' => '+8801633033033',
             'phone_display' => '01633 033 033',
@@ -222,10 +222,12 @@ class InteriorSeeder extends Seeder
             'youtube' => 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ',
             'whatsapp' => 'https://wa.me/8801633033033',
             'stats_projects' => '500+',
-            'stats_years' => '14+',
+            'stats_years' => '15+',
             'stats_team' => '50+',
             'stats_satisfaction' => '100%',
-            'logo' => 'images/dit-studio-logo.webp'
+            'logo' => 'images/triangle-logo.svg',
+            'developer_name' => 'Engr Saad',
+            'developer_url' => 'https://engr-saad.com'
         ];
 
         foreach ($settings as $k => $v) {

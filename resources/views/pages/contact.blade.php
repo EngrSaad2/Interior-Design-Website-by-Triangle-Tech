@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us – DIT Studio Interior Design Dhaka')
-@section('meta_description', 'Contact DIT Studio in Mohakhali New DOHS, Dhaka. Call 01633 033 033 or visit our studio and factory in West Badda. Book a free interior design consultation.')
+@section('title', 'Contact Us – Triangle Interior Design Interior Design Dhaka')
+@section('meta_description', 'Contact Triangle Interior Design in Mohakhali New DOHS, Dhaka. Call 01633 033 033 or visit our studio and factory in West Badda. Book a free interior design consultation.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
     <div class="container" style="text-align:center;">
         <span class="section-subtitle">Get In Touch</span>
-        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">Contact DIT Studio</h1>
+        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">Contact Triangle Interior Design</h1>
         <p style="color:#94a3b8; max-width:650px; margin:0 auto; font-size:1.1rem;">
             Visit our design studio in Mohakhali New DOHS or tour our custom furniture factory in West Badda. We are always ready to discuss your dream space.
         </p>

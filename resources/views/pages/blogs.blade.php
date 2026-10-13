@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Interior Design Blogs & Guides – DIT Studio Bangladesh')
+@section('title', 'Interior Design Blogs & Guides – Triangle Interior Design Bangladesh')
 @section('meta_description', 'Expert interior design advice, layout tips, material guides, and pricing insights for apartment homeowners in Dhaka and Bangladesh.')
 
 @section('content')

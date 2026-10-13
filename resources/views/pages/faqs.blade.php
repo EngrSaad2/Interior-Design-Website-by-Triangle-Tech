@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Frequently Asked Questions – DIT Studio Interior Design')
+@section('title', 'Frequently Asked Questions – Triangle Interior Design Interior Design')
 @section('meta_description', 'Have questions about interior design costs, 3D designs, duration, factory manufacturing, or warranties in Bangladesh? Read our 38 comprehensive FAQs.')
 
 @section('content')

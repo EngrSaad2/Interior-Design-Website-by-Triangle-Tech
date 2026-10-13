@@ -3,16 +3,16 @@
         <div class="footer-grid">
             <!-- Brand Info -->
             <div class="footer-widget">
-                <a href="{{ route('home') }}" class="site-logo" style="margin-bottom:1.25rem;">
-                    <img src="{{ asset('images/dit-studio-logo.webp') }}" alt="DIT Studio" style="height:42px; width:auto; object-fit:contain;">
+                <a href="{{ route('home') }}" class="site-logo" style="margin-bottom:1.5rem; display:inline-block;">
+                    <img src="{{ asset('images/triangle-logo.svg') }}" alt="Triangle Interior Design" style="height:44px; width:auto;">
                 </a>
                 <p>
-                    DIT Studio is a premier architectural and interior design firm in Bangladesh, delivering over 500+ residential and commercial transformations since 2011. Operating our own custom manufacturing facility in West Badda gives us end-to-end quality control and punctuality.
+                    Triangle Interior Design is a premier architectural and interior design firm in Bangladesh, delivering over 500+ residential and commercial transformations since 2011. Operating our own custom manufacturing facility in West Badda gives us end-to-end quality control and punctuality.
                 </p>
-                <div style="display:flex; gap:0.75rem;">
-                    <a href="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" target="_blank" rel="noopener noreferrer" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; color:#ffffff;" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="{{ $settings['youtube'] ?? 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ' }}" target="_blank" rel="noopener noreferrer" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; color:#ffffff;" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="{{ $settings['whatsapp'] ?? 'https://wa.me/8801633033033' }}" target="_blank" rel="noopener noreferrer" style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; color:#ffffff;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <div class="footer-socials">
+                    <a href="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ $settings['youtube'] ?? 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ' }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="{{ $settings['whatsapp'] ?? 'https://wa.me/8801633033033' }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -81,17 +81,25 @@
             </div>
         </div>
 
-        <!-- Bottom Bar -->
+        <!-- Bottom Bar with Developer Credit -->
         <div class="footer-bottom">
             <div class="container">
-                <div>
-                    &copy; {{ date('Y') }} DIT Studio (Interior Specialist). All rights reserved.
+                <div class="footer-copyright">
+                    &copy; {{ date('Y') }} <strong>Triangle Interior Design</strong>. All rights reserved.
                 </div>
-                <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+                
+                <div class="footer-developer-credit">
+                    <span>Developed by </span>
+                    <a href="https://engr-saad.com" target="_blank" rel="noopener noreferrer" class="developer-link" id="developerCreditLink">
+                        Engr Saad <span class="arrow-ext">↗</span>
+                    </a>
+                </div>
+
+                <div class="footer-bottom-links">
                     <a href="{{ route('faqs') }}">FAQs</a>
                     <a href="{{ route('why.choose') }}">Why Choose Us</a>
                     <a href="{{ route('contact') }}">Contact</a>
-                    <a href="{{ route('shop') }}">Custom Furniture Shop</a>
+                    <a href="{{ route('shop') }}">Custom Furniture</a>
                 </div>
             </div>
         </div>

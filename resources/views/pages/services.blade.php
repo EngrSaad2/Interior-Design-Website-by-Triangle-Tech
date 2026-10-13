@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Interior Design Services in Bangladesh – DIT Studio')
-@section('meta_description', 'Explore DIT Studio’s full range of turnkey interior design services: home interior, modular kitchen, bedroom design, luxury closet, custom furniture, and commercial spaces.')
+@section('title', 'Interior Design Services in Bangladesh – Triangle Interior Design')
+@section('meta_description', 'Explore Triangle Interior Design’s full range of turnkey interior design services: home interior, modular kitchen, bedroom design, luxury closet, custom furniture, and commercial spaces.')
 
 @section('content')
 <section class="section-padding" style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $categoryName . ' – DIT Studio Portfolio')
-@section('meta_description', 'Browse completed ' . $categoryName . ' across Bangladesh designed and manufactured by DIT Studio. Premium architectural interiors in Dhaka.')
+@section('title', $categoryName . ' – Triangle Interior Design Portfolio')
+@section('meta_description', 'Browse completed ' . $categoryName . ' across Bangladesh designed and manufactured by Triangle Interior Design. Premium architectural interiors in Dhaka.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
@@ -16,7 +16,7 @@
         <span class="section-subtitle">Dedicated Project Hub</span>
         <h1 style="font-size:2.85rem; color:#fff; margin-bottom:1rem;">{{ $categoryName }}</h1>
         <p style="color:#94a3b8; max-width:700px; margin:0 auto; font-size:1.1rem;">
-            Explore turnkey executions in {{ strtolower($categoryName) }} crafted with precision joinery and world-class imported materials by DIT Studio.
+            Explore turnkey executions in {{ strtolower($categoryName) }} crafted with precision joinery and world-class imported materials by Triangle Interior Design.
         </p>
     </div>
 </section>

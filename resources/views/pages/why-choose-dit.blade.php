@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Why Choose DIT Studio? – Best Interior Design Company in Bangladesh')
-@section('meta_description', 'Discover why DIT Studio has been the trusted interior design firm in Dhaka since 2011. In-house factory, 8-step process, transparent BOQ pricing, and 100% on-time handover.')
+@section('title', 'Why Choose Triangle Interior Design? – Best Interior Design Company in Bangladesh')
+@section('meta_description', 'Discover why Triangle Interior Design has been the trusted interior design firm in Dhaka since 2011. In-house factory, 8-step process, transparent BOQ pricing, and 100% on-time handover.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
     <div class="container" style="text-align:center;">
-        <span class="section-subtitle">The DIT Studio Advantage</span>
-        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">Why Choose DIT Studio?</h1>
+        <span class="section-subtitle">The Triangle Interior Design Advantage</span>
+        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">Why Choose Triangle Interior Design?</h1>
         <p style="color:#94a3b8; max-width:700px; margin:0 auto; font-size:1.15rem;">
-            Founded in 2011, DIT Studio has transformed over 500+ homes with uncompromising craftsmanship, in-house factory manufacturing, and complete financial transparency.
+            Founded in 2011, Triangle Interior Design has transformed over 500+ homes with uncompromising craftsmanship, in-house factory manufacturing, and complete financial transparency.
         </p>
     </div>
 </section>
@@ -80,7 +80,7 @@
 
         <!-- CTA Box -->
         <div style="background:#0e1013; color:#fff; padding:4rem; border-radius:var(--radius-lg); text-align:center; border:1px solid rgba(197,168,128,0.3);">
-            <h2 style="color:#fff; font-size:2.4rem; margin-bottom:1rem;">Ready to Experience the DIT Difference?</h2>
+            <h2 style="color:#fff; font-size:2.4rem; margin-bottom:1rem;">Ready to Experience the Triangle Difference?</h2>
             <p style="color:#94a3b8; max-width:600px; margin:0 auto 2rem auto; font-size:1.1rem;">
                 Visit our Mohakhali New DOHS design studio or tour our West Badda factory to inspect materials first-hand.
             </p>

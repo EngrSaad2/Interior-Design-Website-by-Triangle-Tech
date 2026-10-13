@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'About Us – DIT Studio Interior Design Dhaka')
-@section('meta_description', 'About DIT Studio: Established in 2011, DIT Studio is Bangladesh’s leading architectural interior design and manufacturing firm with 500+ completed projects.')
+@section('title', 'About Us – Triangle Interior Design Interior Design Dhaka')
+@section('meta_description', 'About Triangle Interior Design: Established in 2011, Triangle Interior Design is Bangladesh’s leading architectural interior design and manufacturing firm with 500+ completed projects.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
     <div class="container" style="text-align:center;">
         <span class="section-subtitle">Since 2011</span>
-        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">About DIT Studio</h1>
+        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">About Triangle Interior Design</h1>
         <p style="color:#94a3b8; max-width:700px; margin:0 auto; font-size:1.15rem;">
             A premier team of architects, interior designers, and master craftsmen transforming residential and commercial environments into enduring works of art.
         </p>
@@ -21,7 +21,7 @@
                 <span class="section-subtitle">Our Journey & Philosophy</span>
                 <h2 style="font-size:2.4rem; margin-bottom:1.5rem;">Dedicated To Architectural Excellence</h2>
                 <p style="color:var(--color-text-main); font-size:1.05rem; line-height:1.8; margin-bottom:1.5rem;">
-                    DIT Studio is a leading interior design company in Bangladesh, specializing in creating functional, aesthetic, and fully customized interior solutions for residential, commercial, and office spaces. Founded in 2011 and headquartered in Mohakhali New DOHS, Dhaka, the firm has successfully completed over 500 projects for clients nationwide.
+                    Triangle Interior Design is a leading interior design company in Bangladesh, specializing in creating functional, aesthetic, and fully customized interior solutions for residential, commercial, and office spaces. Founded in 2011 and headquartered in Mohakhali New DOHS, Dhaka, the firm has successfully completed over 500 projects for clients nationwide.
                 </p>
                 <p style="color:var(--color-text-muted); font-size:1rem; line-height:1.7; margin-bottom:2rem;">
                     The company operates with a dedicated design studio in Mohakhali and an in-house manufacturing factory in West Badda, Dhaka. This unique combination gives us full control over quality from conceptual 3D renders to the final bolt and hinge.
@@ -44,7 +44,7 @@
 
             <div>
                 <div style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg);">
-                    <img src="{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}" alt="DIT Studio Design Team Project">
+                    <img src="{{ asset('images/basabo-boys-bedroom-01-1024x768.webp') }}" alt="Triangle Interior Design Design Team Project">
                 </div>
             </div>
         </div>

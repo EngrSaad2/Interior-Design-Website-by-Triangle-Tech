@@ -28,16 +28,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
     const mobileClose = document.querySelector('.mobile-nav-close');
+    const mobileOverlay = document.getElementById('mobileNavOverlay');
+
+    function closeMobileMenu() {
+        mobileNavDrawer?.classList.remove('open');
+        mobileOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
     mobileToggle?.addEventListener('click', function () {
         mobileNavDrawer?.classList.add('open');
+        mobileOverlay?.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
 
-    mobileClose?.addEventListener('click', function () {
-        mobileNavDrawer?.classList.remove('open');
-        document.body.style.overflow = '';
-    });
+    mobileClose?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
 
     // Mobile dropdown toggle
     document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {

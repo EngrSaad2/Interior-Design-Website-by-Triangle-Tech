@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Custom Furniture Shop – DIT Studio Handcrafted Pieces')
-@section('meta_description', 'Shop architectural bespoke furniture designed and manufactured by DIT Studio. Handcrafted in Dhaka using premium imported boards and German Blum hardware.')
+@section('title', 'Custom Furniture Shop – Triangle Interior Design Handcrafted Pieces')
+@section('meta_description', 'Shop architectural bespoke furniture designed and manufactured by Triangle Interior Design. Handcrafted in Dhaka using premium imported boards and German Blum hardware.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
     <div class="container" style="text-align:center;">
         <span class="section-subtitle">Factory Direct Custom Furniture</span>
-        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">DIT Studio Furniture Collection</h1>
+        <h1 style="font-size:3rem; color:#fff; margin-bottom:1rem;">Triangle Interior Design Furniture Collection</h1>
         <p style="color:#94a3b8; max-width:650px; margin:0 auto; font-size:1.1rem;">
             Custom engineered cabinetry, study tables, closets, and accent pieces handcrafted in our West Badda workshop.
         </p>

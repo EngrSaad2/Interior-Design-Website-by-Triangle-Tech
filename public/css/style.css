@@ -1398,6 +1398,29 @@ ul {
     gap: 1rem;
 }
 
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-right: 4.5rem;
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2400;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Floating Actions */
 .floating-actions {
     position: fixed;
@@ -1545,5 +1568,176 @@ ul {
         bottom: 0;
         left: 0;
         margin-top: 1rem;
+    }
+}
+
+/* ==========================================================================
+   DEVELOPER CREDIT & COMPONENT ENHANCEMENTS
+   ========================================================================== */
+.header-logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-fast);
+}
+
+.header-logo-img:hover {
+    transform: scale(1.02);
+}
+
+.footer-developer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.developer-link {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition-fast);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: rgba(197, 168, 128, 0.08);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.developer-link:hover {
+    color: #ffffff;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.4);
+    transform: translateY(-1px);
+}
+
+.developer-link .arrow-ext {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.developer-link:hover .arrow-ext {
+    transform: translate(2px, -2px);
+}
+
+/* Mobile Drawer Component */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background: #0e1013;
+    z-index: 2500;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem 1.75rem;
+    overflow-y: auto;
+    border-right: 1px solid rgba(197, 168, 128, 0.25);
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-drawer.open {
+    transform: translateX(0);
+}
+
+.mobile-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.25rem;
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.75rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+}
+
+.mobile-nav-close:hover {
+    color: var(--color-primary);
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    flex-grow: 1;
+}
+
+.mobile-nav-list a {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: block;
+    padding: 0.35rem 0;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav-list a:hover, .mobile-nav-list a.active {
+    color: var(--color-primary);
+    padding-left: 0.5rem;
+}
+
+.mobile-drawer-footer {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.mobile-drawer-contact {
+    margin-top: 1.25rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.mobile-drawer-contact i {
+    color: var(--color-primary);
+    margin-right: 0.4rem;
+    width: 16px;
+}
+
+/* Extra small devices (< 480px) */
+@media (max-width: 480px) {
+    .top-bar {
+        display: none;
+    }
+    .header-logo-img {
+        height: 32px;
+    }
+    .btn-consultation span {
+        display: none;
+    }
+    .btn-consultation {
+        padding: 0.5rem 0.75rem;
+    }
+    .hero-title {
+        font-size: 1.9rem;
+    }
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+    .section-title {
+        font-size: 1.85rem;
+    }
+    .footer-bottom .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
     }
 }

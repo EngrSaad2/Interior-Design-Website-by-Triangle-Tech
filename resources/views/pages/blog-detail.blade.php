@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $blog->title . ' – DIT Studio Blog')
+@section('title', $blog->title . ' – Triangle Interior Design Blog')
 @section('meta_description', Str::limit(strip_tags($blog->excerpt ?: $blog->content), 155))
 
 @section('content')
@@ -46,8 +46,8 @@
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
                     <div>
-                        <h4 style="font-size:1.15rem; margin-bottom:0.3rem;">DIT Studio Design Editorial</h4>
-                        <p style="color:var(--color-text-muted); font-size:0.875rem;">Architects and interior specialists at DIT Studio sharing hands-on project insights, material comparisons, and construction guidelines in Bangladesh.</p>
+                        <h4 style="font-size:1.15rem; margin-bottom:0.3rem;">Triangle Interior Design Design Editorial</h4>
+                        <p style="color:var(--color-text-muted); font-size:0.875rem;">Architects and interior specialists at Triangle Interior Design sharing hands-on project insights, material comparisons, and construction guidelines in Bangladesh.</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <!-- Consultation CTA Box -->
                 <div style="background:#0e1013; color:#fff; padding:2rem; border-radius:var(--radius-md); border:1px solid rgba(197,168,128,0.3); margin-bottom:2.5rem;">
                     <h3 style="color:#fff; font-size:1.35rem; margin-bottom:0.75rem;">Planning An Interior?</h3>
-                    <p style="color:#94a3b8; font-size:0.875rem; margin-bottom:1.5rem;">Get custom 2D layout planning & transparent BOQ pricing directly from DIT Studio.</p>
+                    <p style="color:#94a3b8; font-size:0.875rem; margin-bottom:1.5rem;">Get custom 2D layout planning & transparent BOQ pricing directly from Triangle Interior Design.</p>
                     <button type="button" class="btn btn-primary open-consultation-modal" style="width:100%;">
                         Book Free Consultation
                     </button>

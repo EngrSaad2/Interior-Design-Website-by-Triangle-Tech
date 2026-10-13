@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Best Interior Design Company in ' . $formattedArea . ' – DIT Studio')
-@section('meta_description', 'Looking for the best interior design company in ' . $formattedArea . '? DIT Studio has executed hundreds of luxury homes and commercial spaces with factory-direct joinery.')
+@section('title', 'Best Interior Design Company in ' . $formattedArea . ' – Triangle Interior Design')
+@section('meta_description', 'Looking for the best interior design company in ' . $formattedArea . '? Triangle Interior Design has executed hundreds of luxury homes and commercial spaces with factory-direct joinery.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<!-- Why Clients in This Area Choose DIT Studio -->
+<!-- Why Clients in This Area Choose Triangle Interior Design -->
 <section class="section-padding">
     <div class="container">
         <div class="section-header">
