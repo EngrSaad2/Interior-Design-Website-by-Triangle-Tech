@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')</title>
     <meta name="description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? Triangle Interior Design has delivered 500+ stunning homes in Dhaka & Chittagong. Call +8801810536303 for free consultation!')">
+    <meta name="keywords" content="@yield('meta_keywords', 'interior design bangladesh, interior design company dhaka, best interior designer, luxury home interior, modular kitchen design dhaka, duplex interior design, turnkey interior firm')">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Triangle Interior Design">
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Open Graph / SEO -->
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Triangle Interior Design" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')" />
-    <meta property="og:description" content="@yield('meta_description', 'Triangle Interior Design - Leading Interior Design firm with 500+ projects completed.')" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="{{ asset('images/triangle-logo.svg') }}" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/favicon-192x192.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#111317">
+
+    <!-- Local SEO Geotags -->
+    <meta name="geo.region" content="BD-13">
+    <meta name="geo.placename" content="Dhaka, Bangladesh">
+    <meta name="geo.position" content="23.777176;90.399452">
+    <meta name="ICBM" content="23.777176, 90.399452">
+
+    <!-- Open Graph (Facebook / LinkedIn / WhatsApp) -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Triangle Interior Design">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')">
+    <meta property="og:description" content="@yield('meta_description', 'Triangle Interior Design - Leading Interior Design firm with 500+ projects completed.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="@yield('og_image', asset('images/banner-4.webp'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Looking for the best interior design company in Bangladesh? 500+ homes delivered.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/banner-4.webp'))">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
+          "@@id": "{{ url('/') }}/#organization",
+          "name": "Triangle Interior Design",
+          "url": "{{ url('/') }}",
+          "logo": "{{ asset('images/triangle-logo.svg') }}",
+          "image": "{{ asset('images/banner-4.webp') }}",
+          "telephone": "+8801810536303",
+          "email": "info@triangleinterior.com",
+          "priceRange": "৳৳ - ৳৳৳",
+          "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "House 127 (2nd floor), Road 05, Mohakhali New DOHS",
+            "addressLocality": "Dhaka",
+            "postalCode": "1206",
+            "addressCountry": "BD"
+          },
+          "geo": {
+            "@@type": "GeoCoordinates",
+            "latitude": "23.777176",
+            "longitude": "90.399452"
+          },
+          "openingHoursSpecification": [
+            {
+              "@@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/dit.interior/",
+            "https://www.linkedin.com/company/ditstudio/",
+            "https://www.youtube.com/@ditstudiobd",
+            "https://www.pinterest.com/ditstudiobd/"
+          ],
+          "aggregateRating": {
+            "@@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@@type": "WebSite",
+          "@@id": "{{ url('/') }}/#website",
+          "url": "{{ url('/') }}",
+          "name": "Triangle Interior Design",
+          "potentialAction": {
+            "@@type": "SearchAction",
+            "target": {
+              "@@type": "EntryPoint",
+              "urlTemplate": "{{ url('/projects?search={search_term_string}') }}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

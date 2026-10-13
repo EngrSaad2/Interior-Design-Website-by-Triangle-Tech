@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /checkout
+Disallow: /inquiry
+Disallow: /cart
+
+# XML Sitemaps
+Sitemap: http://localhost/interior/public/sitemap.xml

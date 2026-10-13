@@ -2,6 +2,58 @@
 
 @section('title', 'Best Interior Design Company in Bangladesh – Triangle Interior Design')
 @section('meta_description', 'Looking for the best interior design company in Bangladesh? Triangle Interior Design has delivered 500+ stunning homes in Dhaka & Chittagong. Call +8801810536303 for free consultation!')
+@section('meta_keywords', 'best interior design company in bangladesh, interior design dhaka, luxury home interior, modular kitchen bangladesh, duplex interior design dhaka, triangle interior design')
+
+@push('scripts')
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@@type": "Question",
+      "name": "What is the typical cost of interior design per sqft in Bangladesh?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Interior design costs in Bangladesh generally range from ৳1,200 to ৳3,500+ per square foot depending on the scope. A basic turnkey fit-out starts around ৳1,200–৳1,800/sqft, while luxury turnkey solutions range between ৳2,200–৳3,500/sqft. Triangle Interior Design provides 100% itemized BOQ quotes after site measurement."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "How long does a full home interior project take to complete?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "For a standard 1,800–2,500 sqft apartment, complete handover typically takes 45 to 60 working days from 3D approval. Because 80% of our cabinetry and furniture is prefabricated in our East Badda factory, on-site noise and disturbance are minimized."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Can I visit your furniture manufacturing factory before signing?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Yes! We encourage clients to visit both our design studio in Mohakhali New DOHS and our factory in East Badda, Dhaka. You can inspect raw materials, edge-banding machines, and live joinery work before making a commitment."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "What materials and hardware brands do you use?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "We use BWR/BWP grade Gorjan marine plywood, Malaysian engineered boards, Merino/Greenlam high-pressure laminates, and genuine German Blum, Hafele, or FGV soft-closing hardware to ensure decades of moisture-resistant durability."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "How can I schedule a consultation or site survey?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "You can call our direct hotline at +8801810536303, message us on WhatsApp (+8801810536303), or click the Get Free Consultation button. Our senior architects will coordinate a free visit."
+      }
+    }
+  ]
+}
+</script>
+@endpush
 
 @section('content')
 <!-- ==========================================================================

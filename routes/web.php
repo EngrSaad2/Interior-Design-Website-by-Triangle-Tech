@@ -38,6 +38,9 @@ Route::post('/inquiry', [InteriorController::class, 'inquirySubmit'])->name('inq
 // Area Landing Pages (e.g. /best-interior-design-company-in-gulshan)
 Route::get('/best-interior-design-company-in-{area}', [InteriorController::class, 'areaPage'])->name('area.landing');
 
+// SEO XML Sitemap
+Route::get('/sitemap.xml', [InteriorController::class, 'sitemap'])->name('sitemap');
+
 // Catch-all for blog slugs like /sliding-vs-hinged-wardrobe-doors/
 Route::get('/{slug}', function($slug) {
     $blog = \App\Models\BlogPost::where('slug', $slug)->first();

@@ -2,6 +2,37 @@
 
 @section('title', $project->title . ' – Triangle Interior Design Project')
 @section('meta_description', Str::limit(strip_tags($project->description), 155))
+@section('og_image', asset($project->featured_image))
+@section('meta_keywords', $project->title . ', interior design ' . ($project->location ?? 'dhaka') . ', residential interior bangladesh')
+
+@push('scripts')
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ route('home') }}"
+    },
+    {
+      "@@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "{{ route('projects') }}"
+    },
+    {
+      "@@type": "ListItem",
+      "position": 3,
+      "name": "{{ $project->title }}",
+      "item": "{{ url()->current() }}"
+    }
+  ]
+}
+</script>
+@endpush
 
 @section('content')
 <!-- Project Hero -->

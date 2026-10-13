@@ -2,6 +2,64 @@
 
 @section('title', $blog->title . ' – Triangle Interior Design Blog')
 @section('meta_description', Str::limit(strip_tags($blog->excerpt ?: $blog->content), 155))
+@section('og_type', 'article')
+@section('og_image', asset($blog->featured_image))
+@section('meta_keywords', $blog->title . ', interior design blog bangladesh, home decor tips dhaka')
+
+@push('scripts')
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BlogPosting",
+  "headline": "{{ $blog->title }}",
+  "description": "{{ Str::limit(strip_tags($blog->excerpt ?: $blog->content), 155) }}",
+  "image": "{{ asset($blog->featured_image) }}",
+  "author": {
+    "@@type": "Person",
+    "name": "{{ $blog->author ?? 'Engr Saad' }}"
+  },
+  "publisher": {
+    "@@type": "Organization",
+    "name": "Triangle Interior Design",
+    "logo": {
+      "@@type": "ImageObject",
+      "url": "{{ asset('images/triangle-logo.svg') }}"
+    }
+  },
+  "datePublished": "{{ $blog->published_at ? $blog->published_at->toIso8601String() : date('c') }}",
+  "mainEntityOfPage": {
+    "@@type": "WebPage",
+    "@@id": "{{ url()->current() }}"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ route('home') }}"
+    },
+    {
+      "@@type": "ListItem",
+      "position": 2,
+      "name": "Blogs",
+      "item": "{{ route('blogs') }}"
+    },
+    {
+      "@@type": "ListItem",
+      "position": 3,
+      "name": "{{ $blog->title }}",
+      "item": "{{ url()->current() }}"
+    }
+  ]
+}
+</script>
+@endpush
 
 @section('content')
 <!-- Blog Header -->

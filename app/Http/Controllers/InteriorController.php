@@ -251,4 +251,51 @@ class InteriorController extends Controller
 
         return back()->with('success', 'Thank you! Your consultation request has been received. Our senior architect will call you shortly.');
     }
+
+    public function sitemap()
+    {
+        $services = Service::where('is_active', true)->get();
+        $projects = Project::all();
+        $blogs = BlogPost::all();
+        $products = Product::all();
+
+        $projectHubs = [
+            'bedroom-interior-design-projects-bangladesh',
+            'master-bedroom-interior-design-projects-bangladesh',
+            'kids-bedroom-interior-design-projects-bangladesh',
+            'guest-bedroom-interior-design-projects-bangladesh',
+            'living-room-interior-design-projects-bangladesh',
+            'dining-room-interior-design-projects-bangladesh',
+            'kitchen-interior-design-projects-bangladesh',
+            'modular-kitchen-projects-bangladesh',
+            'open-kitchen-design-projects-bangladesh',
+            'common-area-interior-design-projects-bangladesh',
+            'cabinet-design-projects-bangladesh',
+            'luxury-interior-design-projects',
+            'modern-interior-design-projects',
+            'closet-design-projects-bangladesh',
+        ];
+
+        $areas = [
+            'gulshan',
+            'banani',
+            'dhanmondi',
+            'uttara',
+            'bashundhara',
+            'baridhara',
+            'mirpur',
+            'chittagong',
+            'sylhet',
+        ];
+
+        return response()->view('pages.sitemap', compact(
+            'services',
+            'projects',
+            'blogs',
+            'products',
+            'projectHubs',
+            'areas'
+        ))->header('Content-Type', 'application/xml');
+    }
 }
+
