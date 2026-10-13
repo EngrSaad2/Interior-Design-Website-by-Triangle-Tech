@@ -128,9 +128,11 @@
                     <h3 style="font-size:1.8rem; margin-bottom:1.5rem;">Full Resolution Project Gallery</h3>
                     <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.5rem;">
                         @foreach($project->gallery as $galImg)
-                            <div style="border-radius:var(--radius-md); overflow:hidden; height:280px; box-shadow:var(--shadow-sm);">
-                                <img src="{{ asset($galImg) }}" alt="{{ $project->title }} photo" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='{{ asset('images/basabo-boys-bedroom-03-1024x768.webp') }}'">
-                            </div>
+                            @if(!empty($galImg) && !str_contains(strtolower($galImg), 'logo') && !str_contains(strtolower($galImg), 'dit.png'))
+                                <div style="border-radius:var(--radius-md); overflow:hidden; height:280px; box-shadow:var(--shadow-sm);">
+                                    <img src="{{ asset($galImg) }}" alt="{{ $project->title }} photo" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='{{ asset('images/basabo-boys-bedroom-03-1024x768.webp') }}'">
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                 @endif
