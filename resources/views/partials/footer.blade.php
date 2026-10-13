@@ -94,13 +94,6 @@
                         Engr Saad <span class="arrow-ext">↗</span>
                     </a>
                 </div>
-
-                <div class="footer-bottom-links">
-                    <a href="{{ route('faqs') }}">FAQs</a>
-                    <a href="{{ route('why.choose') }}">Why Choose Us</a>
-                    <a href="{{ route('contact') }}">Contact</a>
-                    <a href="{{ route('shop') }}">Custom Furniture</a>
-                </div>
             </div>
         </div>
     </div>

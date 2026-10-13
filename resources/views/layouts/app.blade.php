@@ -142,14 +142,11 @@
         <span class="basket-count" id="floatingCartCount">0</span>
     </a>
 
-    <!-- Floating Actions (WhatsApp & Back to Top) -->
+    <!-- Floating Actions (WhatsApp) -->
     <div class="floating-actions">
         <a href="https://wa.me/8801810536303" target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" title="Chat on WhatsApp" id="floatingWhatsappBtn" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <button class="float-btn float-top" title="Back to Top" id="backToTopBtn" aria-label="Back to Top">
-            <i class="fas fa-chevron-up"></i>
-        </button>
     </div>
 
     <!-- Mobile Sticky Bottom Action Bar (Matches ditstudio CALL NOW | WHATSAPP) -->

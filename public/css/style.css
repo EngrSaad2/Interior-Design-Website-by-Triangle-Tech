@@ -1771,6 +1771,16 @@ ul {
     gap: 1rem;
 }
 
+@media (max-width: 768px) {
+    .footer-bottom .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 0.65rem;
+    }
+}
+
 .footer-developer-credit {
     display: inline-flex;
     align-items: center;
