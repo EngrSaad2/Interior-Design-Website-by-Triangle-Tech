@@ -4,7 +4,7 @@
             <!-- Brand Info -->
             <div class="footer-widget">
                 <a href="{{ route('home') }}" class="site-logo" style="margin-bottom:1.5rem; display:inline-block;">
-                    <img src="{{ asset('images/triangle-logo.svg') }}" alt="Triangle Interior Design" style="height:44px; width:auto;">
+                    <img src="{{ asset('images/triangle-logo-white.svg') }}" alt="Triangle Interior Design" style="height:44px; width:auto;">
                 </a>
                 <p>
                     Triangle Interior Design is a premier architectural and interior design firm in Bangladesh, delivering over 500+ residential and commercial transformations since 2011. Operating our own custom manufacturing facility in West Badda gives us end-to-end quality control and punctuality.
@@ -12,7 +12,7 @@
                 <div class="footer-socials">
                     <a href="{{ $settings['facebook'] ?? 'https://www.facebook.com/dit.interior/' }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="{{ $settings['youtube'] ?? 'https://www.youtube.com/channel/UCH_kEOE-o6hlo1X1DVermTQ' }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="{{ $settings['whatsapp'] ?? 'https://wa.me/8801633033033' }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/8801810536303" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -64,17 +64,17 @@
                 <div class="footer-contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                        <a href="tel:{{ $settings['phone'] ?? '+8801633033033' }}" style="color:#ffffff; font-weight:600;">
-                            {{ $settings['phone_display'] ?? '01633 033 033' }}
+                        <a href="tel:+8801810536303" style="color:#ffffff; font-weight:600;">
+                            +8801810536303 (Hotline)
                         </a>
-                        <span style="display:block; font-size:0.8rem; color:#94a3b8;">Factory: +8801611644811</span>
+                        <span style="display:block; font-size:0.8rem; color:#94a3b8;">Factory: +8801810536303</span>
                     </div>
                 </div>
                 <div class="footer-contact-item">
                     <i class="fas fa-envelope"></i>
                     <div>
-                        <a href="mailto:{{ $settings['email'] ?? 'info.ditbd@gmail.com' }}">
-                            {{ $settings['email'] ?? 'info.ditbd@gmail.com' }}
+                        <a href="mailto:{{ $settings['email'] ?? 'info@triangleinterior.com' }}">
+                            {{ $settings['email'] ?? 'info@triangleinterior.com' }}
                         </a>
                     </div>
                 </div>

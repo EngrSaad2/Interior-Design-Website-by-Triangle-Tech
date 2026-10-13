@@ -1,0 +1,259 @@
+/* ==========================================================================
+   DIT Hero Slider — replicates the full homepage hero.
+   Slider (crossfade + zoomIn content animation) + CTA + catalogue + social.
+   All visual rules are scoped under `.dit-hero` so they beat the theme's
+   global kit rules (e.g. `.elementor-kit-9 h1`, specificity 0,1,1).
+   ========================================================================== */
+
+.dit-hero {
+	position: relative;   /* anchor for the absolute overlays */
+	width: 100%;
+	overflow: hidden;
+}
+
+.dit-hero .dit-hero__viewport {
+	position: relative;
+	width: 100%;
+	height: 700px; /* desktop height (matches current slider) */
+}
+
+/* --- Slides: no-dip crossfade -------------------------------------------
+   The outgoing slide (.is-prev) stays fully opaque UNDERNEATH while the new
+   slide (.is-active) fades in on top. Because there is always an opaque layer
+   below, the mid-fade "dip to background" (the blink) never happens.        */
+.dit-hero .dit-hero__slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	z-index: 0;
+	transition: opacity 600ms ease-in-out; /* smooth crossfade */
+}
+.dit-hero .dit-hero__slide.is-prev {   /* outgoing: held opaque beneath */
+	opacity: 1;
+	z-index: 1;
+}
+.dit-hero .dit-hero__slide.is-active { /* incoming: fades in on top */
+	opacity: 1;
+	z-index: 2;
+}
+
+.dit-hero .dit-hero__bg {
+	position: absolute;
+	inset: 0;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* --- Content box (top-anchored, left) — matches the live site ----------- */
+.dit-hero .dit-hero__inner {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	display: flex;
+	align-items: flex-start;     /* content sits near the top (not centred) */
+	justify-content: flex-start; /* h-position: left   */
+	padding: 69px 50px 50px;     /* top offset measured from the live hero */
+	color: #fff;
+	text-align: left;
+	/* Dark left-to-right overlay for text contrast (strength set from admin) */
+	background: linear-gradient(to right, rgba(0, 0, 0, var(--dit-overlay-strength, 0.8)) 10%, rgba(0, 0, 0, 0) 80%);
+}
+.dit-hero .dit-hero__contents {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 850px;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- zoomIn content animation (matches original data-animation="zoomIn") - */
+@keyframes ditHeroZoomIn {
+	from { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+	50%  { opacity: 1; }
+}
+.dit-hero .dit-hero__slide.is-active .dit-hero__contents {
+	animation: ditHeroZoomIn 1.25s;   /* duration measured from the live site */
+}
+
+/* --- Typography (site's custom fonts, loaded globally) ------------------- */
+.dit-hero .dit-hero__heading {
+	margin: 0 0 10px;
+	font-family: "Redzone Bold", Sans-serif;
+	font-size: 50px;
+	line-height: 70px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-style: normal;
+	color: #fff;
+}
+.dit-hero .dit-hero__desc {
+	margin: 0;
+	font-family: "Visia Pro Regular", Sans-serif;
+	font-size: 20px;
+	line-height: 38px;
+	font-weight: 400;
+	color: #fff;
+}
+.dit-hero .highlight { color: #eb2349; }
+
+/* ==========================================================================
+   OVERLAY 1 — "Get Free Consultation" button
+   ========================================================================== */
+.dit-hero .dit-hero__cta {
+	position: absolute;
+	top: 396px;
+	left: 48px;
+	margin-top: 80px;               /* mirrors Elementor's offset */
+	z-index: 5;
+	display: inline-block;
+	background-color: #eb2349;
+	color: #fff;
+	font-family: "Redzone Bold", Sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+	text-transform: uppercase;      /* matches the live button */
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 25px 30px;
+	transition: background-color .3s, color .3s;
+}
+.dit-hero .dit-hero__cta:hover,
+.dit-hero .dit-hero__cta:focus {
+	background-color: #fff;
+	color: #eb2349;
+}
+
+/* ==========================================================================
+   OVERLAY 2 — Catalogue download (white rounded box + image)
+   ========================================================================== */
+.dit-hero .dit-hero__catalogue {
+	position: absolute;
+	top: 396px;
+	left: 320px;
+	margin-top: 80px;
+	z-index: 5;
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	line-height: 0;
+}
+.dit-hero .dit-hero__catalogue img {
+	display: block;
+	width: 150px;
+	height: auto;
+}
+
+/* ==========================================================================
+   OVERLAY 3 — Social icons (bottom-left, dark circles)
+   ========================================================================== */
+.dit-hero .dit-hero__social {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	padding: 15px 15px 15px 40px;
+}
+.dit-hero .dit-hero__social-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.dit-hero .dit-hero__social-list li { margin: 0; padding: 0; }
+
+.dit-hero .dit-hero__social-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;                 /* icon padding -> circle size = 20 + 20 */
+	background-color: #090909;     /* global primary */
+	border-radius: 50%;
+	transition: transform .3s ease, background-color .3s;
+}
+.dit-hero .dit-hero__social-icon svg {
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+	transition: fill .3s;
+}
+.dit-hero .dit-hero__social-icon:hover { transform: scale(1.15); } /* "grow" */
+.dit-hero .dit-hero__social-icon:hover svg { fill: #eb2349; }      /* accent */
+
+/* ==========================================================================
+   TABLET  ( <= 1024px )
+   ========================================================================== */
+@media (max-width: 1024px) {
+	.dit-hero .dit-hero__viewport { height: 330px; }
+	.dit-hero .dit-hero__inner    { padding: 26px 15px 15px; }
+	.dit-hero .dit-hero__contents { max-width: 700px; }
+	.dit-hero .dit-hero__heading  { font-size: 45px; line-height: 60px; }
+	.dit-hero .dit-hero__desc     { display: none; } /* hidden on tablet/mobile, like the live site */
+
+	.dit-hero .dit-hero__cta {
+		top: 140px;
+		left: 15px;
+		margin-top: 50px;
+		font-size: 15px;
+		padding: 22px 20px;
+	}
+
+	.dit-hero .dit-hero__catalogue {
+		top: 140px;
+		left: 230px;
+		margin-top: 50px;
+	}
+	.dit-hero .dit-hero__catalogue img { width: 130px; height: 40px; }
+
+	.dit-hero .dit-hero__social { padding: 15px; }
+	.dit-hero .dit-hero__social-list { gap: 10px; }
+}
+
+/* ==========================================================================
+   MOBILE  ( <= 767px )
+   ========================================================================== */
+@media (max-width: 767px) {
+	.dit-hero .dit-hero__viewport { height: 200px; }
+	.dit-hero .dit-hero__inner    { padding: 17px 15px 15px; }
+	.dit-hero .dit-hero__contents { max-width: 550px; }
+	.dit-hero .dit-hero__heading  { font-size: 20px; line-height: 24px; }
+
+	.dit-hero .dit-hero__cta {
+		top: 35px;
+		left: 16px;
+		margin-top: 80px;
+		font-size: 11px;
+		border-radius: 8px;
+		padding: 10px;
+	}
+
+	.dit-hero .dit-hero__catalogue {
+		top: 80px;
+		left: 16px;
+		margin-top: 0;
+		padding: 0 3px 3px;
+	}
+	.dit-hero .dit-hero__catalogue img {
+		width: 80px;
+		height: 25px;
+		object-fit: cover;
+		object-position: center center;
+		border-radius: 10px;
+	}
+
+	.dit-hero .dit-hero__social { padding: 10px 15px; }
+	.dit-hero .dit-hero__social-list { gap: 7px; }
+	.dit-hero .dit-hero__social-icon { padding: 5px; }
+	.dit-hero .dit-hero__social-icon svg { width: 15px; height: 15px; }
+}
+
+/* Respect reduced-motion users: no fade / zoom animation. */
+@media (prefers-reduced-motion: reduce) {
+	.dit-hero .dit-hero__slide { transition: none; }
+	.dit-hero .dit-hero__slide.is-active .dit-hero__contents { animation: none; }
+}

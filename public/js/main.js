@@ -1,108 +1,218 @@
 /**
- * DIT Studio - Modern Frontend Interactions
+ * Triangle Interior Design - Complete Frontend Interactivity
+ * 100% Faithful replication of ditstudio.com.bd features
  */
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Sticky Header
-    const header = document.querySelector('.site-header');
-    const floatTop = document.querySelector('.float-top');
+    // =========================================================================
+    // 1. DIT-HERO AUTO-ROTATING CROSSFADE SLIDER
+    // =========================================================================
+    const hero = document.getElementById('ditHero');
+    if (hero) {
+        const slides = hero.querySelectorAll('.dit-hero__slide');
+        let currentIndex = 0;
+        let slideTimer = null;
+        const autoPlayDelay = parseInt(hero.dataset.autoplay, 10) || 5000;
 
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            header?.classList.add('scrolled');
-        } else {
-            header?.classList.remove('scrolled');
+        function goToSlide(nextIndex) {
+            if (slides.length <= 1) return;
+            const currentSlide = slides[currentIndex];
+            const nextSlide = slides[nextIndex];
+
+            // Mark current as previous (keeps it opaque beneath while next fades in)
+            slides.forEach(s => s.classList.remove('is-prev', 'is-active'));
+            currentSlide.classList.add('is-prev');
+            nextSlide.classList.add('is-active');
+
+            currentSlide.setAttribute('aria-hidden', 'true');
+            nextSlide.setAttribute('aria-hidden', 'false');
+
+            currentIndex = nextIndex;
         }
 
-        if (window.scrollY > 350) {
-            floatTop?.classList.add('visible');
-        } else {
-            floatTop?.classList.remove('visible');
+        function startAutoPlay() {
+            stopAutoPlay();
+            slideTimer = setInterval(() => {
+                const next = (currentIndex + 1) % slides.length;
+                goToSlide(next);
+            }, autoPlayDelay);
         }
-    });
 
-    floatTop?.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        function stopAutoPlay() {
+            if (slideTimer) {
+                clearInterval(slideTimer);
+                slideTimer = null;
+            }
+        }
 
-    // 2. Mobile Menu Toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const mobileNavDrawer = document.querySelector('.mobile-nav-drawer');
-    const mobileClose = document.querySelector('.mobile-nav-close');
-    const mobileOverlay = document.getElementById('mobileNavOverlay');
+        startAutoPlay();
+        hero.addEventListener('mouseenter', stopAutoPlay);
+        hero.addEventListener('mouseleave', startAutoPlay);
+    }
 
-    function closeMobileMenu() {
-        mobileNavDrawer?.classList.remove('open');
-        mobileOverlay?.classList.remove('active');
+    // =========================================================================
+    // 2. SERVICES CAROUSEL ARROW NAVIGATION
+    // =========================================================================
+    const track = document.getElementById('servicesCarouselTrack');
+    const prevBtn = document.getElementById('servicesPrevBtn');
+    const nextBtn = document.getElementById('servicesNextBtn');
+
+    if (track) {
+        const getScrollStep = () => {
+            const card = track.querySelector('.service-slide-card');
+            return card ? card.offsetWidth + 20 : 280;
+        };
+
+        prevBtn?.addEventListener('click', () => {
+            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+
+        nextBtn?.addEventListener('click', () => {
+            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+    }
+
+    // =========================================================================
+    // 3. SEARCH MODAL OPEN / CLOSE
+    // =========================================================================
+    const searchBtn = document.getElementById('headerSearchBtn');
+    const searchModal = document.getElementById('searchModal');
+    const searchClose = document.getElementById('searchModalClose');
+    const searchInput = document.getElementById('siteSearchInput');
+
+    function openSearch() {
+        searchModal?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => searchInput?.focus(), 100);
+    }
+
+    function closeSearch() {
+        searchModal?.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    mobileToggle?.addEventListener('click', function () {
-        mobileNavDrawer?.classList.add('open');
-        mobileOverlay?.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    searchBtn?.addEventListener('click', openSearch);
+    searchClose?.addEventListener('click', closeSearch);
+
+    searchModal?.addEventListener('click', (e) => {
+        if (e.target === searchModal) closeSearch();
     });
 
-    mobileClose?.addEventListener('click', closeMobileMenu);
-    mobileOverlay?.addEventListener('click', closeMobileMenu);
-
-    // Mobile dropdown toggle
-    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const submenu = this.nextElementSibling;
-            if (submenu) {
-                submenu.classList.toggle('open');
-                this.querySelector('i')?.classList.toggle('rotate');
+    searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const query = encodeURIComponent(searchInput.value.trim());
+            if (query) {
+                window.location.href = `/projects?search=${query}`;
             }
-        });
-    });
-
-    // 3. FAQ Accordion
-    document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', function () {
-            const parent = this.closest('.faq-item');
-            const isActive = parent.classList.contains('active');
-
-            // Close others
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            if (!isActive) {
-                parent.classList.add('active');
-            }
-        });
-    });
-
-    // 4. Consultation Modal
-    const consultationModal = document.getElementById('consultationModal');
-    const consultationTriggers = document.querySelectorAll('.open-consultation-modal');
-    const modalClose = document.querySelector('.modal-close');
-
-    consultationTriggers.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            consultationModal?.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    modalClose?.addEventListener('click', function () {
-        consultationModal?.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-
-    consultationModal?.addEventListener('click', function (e) {
-        if (e.target === this) {
-            this.classList.remove('active');
-            document.body.style.overflow = '';
         }
     });
 
-    // 5. Shopping Cart Simulation (Stored in localStorage)
+    // =========================================================================
+    // 4. MOBILE NAVIGATION DRAWER
+    // =========================================================================
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const navDrawer = document.getElementById('mobileNavDrawer');
+    const drawerClose = document.getElementById('mobileDrawerClose');
+    const navOverlay = document.getElementById('mobileNavOverlay');
+
+    function openDrawer() {
+        navDrawer?.classList.add('active');
+        navOverlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        navDrawer?.classList.remove('active');
+        navOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    menuToggle?.addEventListener('click', openDrawer);
+    drawerClose?.addEventListener('click', closeDrawer);
+    navOverlay?.addEventListener('click', closeDrawer);
+
+    // =========================================================================
+    // 5. FREE CONSULTATION MODAL
+    // =========================================================================
+    const consultationModal = document.getElementById('consultationModal');
+    const consultationBtns = document.querySelectorAll('.open-consultation-modal');
+    const consultClose = document.getElementById('consultationModalClose');
+
+    function openConsultModal(e) {
+        if (e) e.preventDefault();
+        consultationModal?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeConsultModal() {
+        consultationModal?.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    consultationBtns.forEach(btn => btn.addEventListener('click', openConsultModal));
+    consultClose?.addEventListener('click', closeConsultModal);
+
+    consultationModal?.addEventListener('click', (e) => {
+        if (e.target === consultationModal) closeConsultModal();
+    });
+
+    // =========================================================================
+    // 6. FAQ ACCORDION
+    // =========================================================================
+    document.querySelectorAll('.faq-accordion-header').forEach(header => {
+        header.addEventListener('click', function () {
+            const item = this.closest('.faq-accordion-item');
+            const body = item.querySelector('.faq-accordion-body');
+            const isActive = item.classList.contains('active');
+
+            // Close siblings
+            document.querySelectorAll('.faq-accordion-item').forEach(other => {
+                if (other !== item) {
+                    other.classList.remove('active');
+                    const b = other.querySelector('.faq-accordion-body');
+                    if (b) b.style.maxHeight = null;
+                }
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                body.style.maxHeight = body.scrollHeight + 'px';
+            } else {
+                item.classList.remove('active');
+                body.style.maxHeight = null;
+            }
+        });
+    });
+
+    // =========================================================================
+    // 7. PORTFOLIO PROJECT FILTER TABS
+    // =========================================================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-item-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            projectCards.forEach(card => {
+                const category = card.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // =========================================================================
+    // 8. SHOPPING CART SIMULATION (localStorage)
+    // =========================================================================
     const cart = {
-        items: JSON.parse(localStorage.getItem('dit_cart') || '[]'),
+        items: JSON.parse(localStorage.getItem('triangle_cart') || '[]'),
         save() {
-            localStorage.setItem('dit_cart', JSON.stringify(this.items));
+            localStorage.setItem('triangle_cart', JSON.stringify(this.items));
             this.updateUI();
         },
         addItem(id, title, price, image) {
@@ -137,15 +247,17 @@ document.addEventListener('DOMContentLoaded', function () {
             return this.items.reduce((sum, item) => sum + item.qty, 0);
         },
         updateUI() {
-            const badge = document.querySelector('.cart-badge');
-            if (badge) badge.textContent = this.getCount();
+            const count = this.getCount();
+            document.querySelectorAll('.cart-badge, #floatingCartCount').forEach(badge => {
+                badge.textContent = count;
+            });
 
             const cartDrawerItems = document.getElementById('cartDrawerItems');
             const cartDrawerTotal = document.getElementById('cartDrawerTotal');
 
             if (cartDrawerItems) {
                 if (this.items.length === 0) {
-                    cartDrawerItems.innerHTML = '<div style="text-align:center; padding: 3rem 1rem; color: #94a3b8;"><i class="fas fa-shopping-bag" style="font-size:2.5rem; margin-bottom:1rem; opacity:0.4;"></i><p>Your cart is empty</p></div>';
+                    cartDrawerItems.innerHTML = '<div style="text-align:center; padding:3rem 1rem; color:#94a3b8;"><i class="fas fa-shopping-bag" style="font-size:2.5rem; margin-bottom:1rem; opacity:0.4;"></i><p>Your cart is empty</p></div>';
                 } else {
                     cartDrawerItems.innerHTML = this.items.map(item => `
                         <div class="cart-drawer-item" style="display:flex; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(255,255,255,0.08);">
@@ -170,11 +282,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         openDrawer() {
-            document.getElementById('cartDrawer')?.classList.add('open');
+            document.getElementById('cartDrawer')?.classList.add('active');
             document.body.style.overflow = 'hidden';
         },
         closeDrawer() {
-            document.getElementById('cartDrawer')?.classList.remove('open');
+            document.getElementById('cartDrawer')?.classList.remove('active');
             document.body.style.overflow = '';
         }
     };
@@ -182,22 +294,35 @@ document.addEventListener('DOMContentLoaded', function () {
     window.cart = cart;
     cart.updateUI();
 
-    document.querySelector('.cart-toggle-btn')?.addEventListener('click', function () {
-        cart.openDrawer();
+    document.querySelectorAll('.cart-toggle-btn, #floatingCartBasket').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // If it's a link on mobile or desktop, open the slideout drawer instead of navigating away
+            e.preventDefault();
+            cart.openDrawer();
+        });
     });
 
-    document.querySelector('.cart-drawer-close')?.addEventListener('click', function () {
+    document.getElementById('cartDrawerClose')?.addEventListener('click', () => {
         cart.closeDrawer();
     });
 
-    document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const id = this.dataset.id;
-            const title = this.dataset.title;
-            const price = this.dataset.price;
-            const image = this.dataset.image;
-            cart.addItem(id, title, price, image);
-        });
+    document.getElementById('cartDrawer')?.addEventListener('click', function(e) {
+        if (e.target === this) cart.closeDrawer();
+    });
+
+    // =========================================================================
+    // 9. BACK TO TOP BUTTON
+    // =========================================================================
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn?.classList.add('visible');
+        } else {
+            backToTopBtn?.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });

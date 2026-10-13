@@ -135,7 +135,7 @@
                         </form>
 
                         <div style="margin-top:1.5rem; text-align:center;">
-                            <a href="https://wa.me/8801633033033?text=Hi%20Triangle%20Studio,%20I%20am%20interested%20in%20a%20project%20like%20{{ urlencode($project->title) }}" target="_blank" rel="noopener noreferrer" style="color:#25d366; font-size:0.9rem; font-weight:700; display:inline-flex; align-items:center; gap:0.4rem;">
+                            <a href="https://wa.me/8801810536303?text=Hi%20Triangle%20Studio,%20I%20am%20interested%20in%20a%20project%20like%20{{ urlencode($project->title) }}" target="_blank" rel="noopener noreferrer" style="color:#25d366; font-size:0.9rem; font-weight:700; display:inline-flex; align-items:center; gap:0.4rem;">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
                             </a>
                         </div>

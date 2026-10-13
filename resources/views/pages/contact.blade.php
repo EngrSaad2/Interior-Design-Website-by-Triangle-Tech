@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us – Triangle Interior Design Interior Design Dhaka')
-@section('meta_description', 'Contact Triangle Interior Design in Mohakhali New DOHS, Dhaka. Call 01633 033 033 or visit our studio and factory in West Badda. Book a free interior design consultation.')
+@section('meta_description', 'Contact Triangle Interior Design in Mohakhali New DOHS, Dhaka. Call 01810 536 303 or visit our studio and factory in West Badda. Book a free interior design consultation.')
 
 @section('content')
 <section style="background:#0e1013; color:#fff; padding:5rem 0 4rem 0;">
@@ -53,12 +53,12 @@
                     Call us for quick quotes or instant site survey scheduling.
                 </p>
                 <div style="font-size:0.95rem; font-weight:700;">
-                    <a href="tel:{{ $settings['phone'] ?? '+8801633033033' }}" style="color:var(--color-primary-dark);">
-                        {{ $settings['phone_display'] ?? '01633 033 033' }}
+                    <a href="tel:{{ $settings['phone'] ?? '+8801810536303' }}" style="color:var(--color-primary-dark);">
+                        {{ $settings['phone_display'] ?? '01810 536 303' }}
                     </a>
                 </div>
                 <div style="font-size:0.85rem; color:var(--color-text-muted); margin-top:0.3rem;">
-                    <a href="mailto:{{ $settings['email'] ?? 'info.ditbd@gmail.com' }}">info.ditbd@gmail.com</a>
+                    <a href="mailto:{{ $settings['email'] ?? 'info@triangleinterior.com' }}">{{ $settings['email'] ?? 'info@triangleinterior.com' }}</a>
                 </div>
             </div>
         </div>
